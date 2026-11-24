@@ -29,6 +29,7 @@
     .catch(function () {});
   sb.auth.onAuthStateChange(function (ev, s) {
     sess = s || null;
+    adminP = null;
   });
   ready.then(function () {
     if (hadToken) {
@@ -299,6 +300,19 @@
     },
   };
 
+  /* connexion par mot de passe */
+  async function mdp(mail, pwd) {
+    var r = await sb.auth.signInWithPassword({ email: mail, password: pwd });
+    if (r.error) return r.error.message || "erreur";
+    sess = r.data.session;
+    adminP = null;
+    return "";
+  }
+  async function changerMdp(pwd) {
+    var r = await sb.auth.updateUser({ password: pwd });
+    return r.error ? r.error.message || "erreur" : "";
+  }
+
   /* connexion par lien envoyé par e-mail */
   async function lien(mail) {
     var r = await sb.auth.signInWithOtp({
@@ -322,6 +336,8 @@
   }
   window.MO_SB = {
     admin: estAdmin,
+    mdp: mdp,
+    changerMdp: changerMdp,
     sb: sb,
     ready: ready,
     reel: reel,
