@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-648.0 -548.0 1316.0 1465.6" font-family="Jost, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<defs><pattern id="zb" patternUnits="userSpaceOnUse" width="26.9" height="26.9" patternTransform="rotate(28)"><rect width="26.9" height="26.9" fill="#F4EEE6"/><rect width="11.2" height="26.9" fill="#17110F" opacity=".16"/></pattern></defs>
+<rect x="-648.0" y="-548.0" width="1316.0" height="1465.6" fill="#FFFFFF"/>
+<rect x="-400.0" y="-300.0" width="800.0" height="600.0" fill="#FBF6EF"/>
+<line x1="-400.0" y1="-300.0" x2="-400.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-300.0" y1="-300.0" x2="-300.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-200.0" y1="-300.0" x2="-200.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-100.0" y1="-300.0" x2="-100.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="0.0" y1="-300.0" x2="0.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="100.0" y1="-300.0" x2="100.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="200.0" y1="-300.0" x2="200.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="300.0" y1="-300.0" x2="300.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="400.0" y1="-300.0" x2="400.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-400.0" y1="-300.0" x2="400.0" y2="-300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-400.0" y1="-200.0" x2="400.0" y2="-200.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-400.0" y1="-100.0" x2="400.0" y2="-100.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-400.0" y1="0.0" x2="400.0" y2="0.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-400.0" y1="100.0" x2="400.0" y2="100.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-400.0" y1="200.0" x2="400.0" y2="200.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<line x1="-400.0" y1="300.0" x2="400.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.12"/>
+<g transform="translate(0.0 -30.0) rotate(-0.00)">
+<rect x="-215.0" y="-160.0" width="430.0" height="320.0" rx="19.2" fill="url(#zb)" stroke="#5C4E46" stroke-width="1.79" stroke-dasharray="8.96 6.72"/>
+</g>
+<g transform="translate(0.0 -270.0) rotate(-0.00)">
+<rect x="-106.0" y="-31.0" width="212.0" height="62.0" rx="3.7" fill="#EEDFD3" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<g transform="translate(-380.0 0.0) rotate(-0.00)">
+<rect x="-20.0" y="-220.0" width="40.0" height="440.0" rx="2.4" fill="#EEDFD3" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<g transform="translate(0.0 105.0) rotate(-0.00)">
+<rect x="-125.0" y="-49.0" width="250.0" height="98.0" rx="5.9" fill="#FFFFFF" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<g transform="translate(-195.0 -60.0) rotate(81.36)">
+<rect x="-42.0" y="-41.0" width="84.0" height="82.0" rx="4.9" fill="#FFFFFF" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<g transform="translate(195.0 -60.0) rotate(-81.36)">
+<rect x="-42.0" y="-41.0" width="84.0" height="82.0" rx="4.9" fill="#FFFFFF" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<g transform="translate(0.0 -45.0) rotate(-0.00)">
+<rect x="-68.0" y="-36.0" width="136.0" height="72.0" rx="4.3" fill="#FFFFFF" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<g transform="translate(162.0 102.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="25.0" ry="25.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<g transform="translate(0.0 178.0) rotate(-0.00)">
+<rect x="-100.0" y="-18.0" width="200.0" height="36.0" rx="2.2" fill="#FFFFFF" stroke="#5C4E46" stroke-width="1.79"/>
+</g>
+<text x="0.0" y="-263.3" font-size="19.04" fill="#5C4E46" text-anchor="middle" letter-spacing="1.12">CHEMINÉE</text>
+<text x="-380.0" y="6.7" font-size="19.04" fill="#5C4E46" text-anchor="middle" letter-spacing="1.12" transform="rotate(-90 -380.0 0.0)">BIBLIOTHÈQUE</text>
+<text x="0.0" y="111.7" font-size="19.04" fill="#5C4E46" text-anchor="middle" letter-spacing="1.12">CANAPÉ</text>
+<text x="-195.0" y="-53.3" font-size="15.68" fill="#5C4E46" text-anchor="middle" letter-spacing="1.12">FAUTEUIL</text>
+<text x="195.0" y="-53.3" font-size="15.68" fill="#5C4E46" text-anchor="middle" letter-spacing="1.12">FAUTEUIL</text>
+<text x="0.0" y="-38.3" font-size="19.04" fill="#5C4E46" text-anchor="middle" letter-spacing="1.12">TABLE BASSE</text>
+<text x="0.0" y="184.7" font-size="19.04" fill="#5C4E46" text-anchor="middle" letter-spacing="1.12">CONSOLE</text>
+<rect x="-420.0" y="-320.0" width="860.0" height="20.0" fill="#5E1522"/>
+<rect x="-420.0" y="300.0" width="335.0" height="20.0" fill="#5E1522"/>
+<rect x="85.0" y="300.0" width="355.0" height="20.0" fill="#5E1522"/>
+<line x1="-85.0" y1="300.0" x2="-85.0" y2="215.0" stroke="#17110F" stroke-width="1.79"/>
+<path d="M -85.0 215.0 A 85.0 85.0 0 0 1 0.0 300.0" fill="none" stroke="#5C4E46" stroke-width="1.12" stroke-dasharray="5.60 4.48"/>
+<line x1="85.0" y1="300.0" x2="85.0" y2="215.0" stroke="#17110F" stroke-width="1.79"/>
+<path d="M 85.0 215.0 A 85.0 85.0 0 0 0 0.0 300.0" fill="none" stroke="#5C4E46" stroke-width="1.12" stroke-dasharray="5.60 4.48"/>
+<line x1="-85.0" y1="300.0" x2="-85.0" y2="320.0" stroke="#17110F" stroke-width="1.34"/>
+<line x1="85.0" y1="300.0" x2="85.0" y2="320.0" stroke="#17110F" stroke-width="1.34"/>
+<rect x="400.0" y="-300.0" width="40.0" height="35.0" fill="#5E1522"/>
+<rect x="400.0" y="-135.0" width="40.0" height="70.0" fill="#5E1522"/>
+<rect x="400.0" y="65.0" width="40.0" height="70.0" fill="#5E1522"/>
+<rect x="400.0" y="265.0" width="40.0" height="35.0" fill="#5E1522"/>
+<line x1="417.0" y1="-265.0" x2="417.0" y2="-135.0" stroke="#17110F" stroke-width="1.34"/>
+<line x1="423.0" y1="-265.0" x2="423.0" y2="-135.0" stroke="#17110F" stroke-width="1.34"/>
+<line x1="400.0" y1="-265.0" x2="400.0" y2="-135.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="440.0" y1="-265.0" x2="440.0" y2="-135.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="400.0" y1="-265.0" x2="440.0" y2="-265.0" stroke="#17110F" stroke-width="1.57"/>
+<line x1="400.0" y1="-135.0" x2="440.0" y2="-135.0" stroke="#17110F" stroke-width="1.57"/>
+<line x1="417.0" y1="-65.0" x2="417.0" y2="65.0" stroke="#17110F" stroke-width="1.34"/>
+<line x1="423.0" y1="-65.0" x2="423.0" y2="65.0" stroke="#17110F" stroke-width="1.34"/>
+<line x1="400.0" y1="-65.0" x2="400.0" y2="65.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="440.0" y1="-65.0" x2="440.0" y2="65.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="400.0" y1="-65.0" x2="440.0" y2="-65.0" stroke="#17110F" stroke-width="1.57"/>
+<line x1="400.0" y1="65.0" x2="440.0" y2="65.0" stroke="#17110F" stroke-width="1.57"/>
+<line x1="417.0" y1="135.0" x2="417.0" y2="265.0" stroke="#17110F" stroke-width="1.34"/>
+<line x1="423.0" y1="135.0" x2="423.0" y2="265.0" stroke="#17110F" stroke-width="1.34"/>
+<line x1="400.0" y1="135.0" x2="400.0" y2="265.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="440.0" y1="135.0" x2="440.0" y2="265.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="400.0" y1="135.0" x2="440.0" y2="135.0" stroke="#17110F" stroke-width="1.57"/>
+<line x1="400.0" y1="265.0" x2="440.0" y2="265.0" stroke="#17110F" stroke-width="1.57"/>
+<rect x="-420.0" y="-300.0" width="20.0" height="600.0" fill="#5E1522"/>
+<text x="0.0" y="20.0" font-size="24.64" fill="#5E1522" text-anchor="middle" letter-spacing="3.36" font-weight="500">SALON</text>
+<line x1="-400.0" y1="-445.4" x2="400.0" y2="-445.4" stroke="#17110F" stroke-width="1.12"/>
+<line x1="-407.8" y1="-437.6" x2="-392.2" y2="-453.3" stroke="#17110F" stroke-width="1.79"/>
+<line x1="392.2" y1="-437.6" x2="407.8" y2="-453.3" stroke="#17110F" stroke-width="1.79"/>
+<text x="0.0" y="-453.3" font-size="17.92" fill="#17110F" text-anchor="middle">8,00</text>
+<line x1="-545.4" y1="-300.0" x2="-545.4" y2="300.0" stroke="#17110F" stroke-width="1.12"/>
+<line x1="-553.3" y1="-292.2" x2="-537.6" y2="-307.8" stroke="#17110F" stroke-width="1.79"/>
+<line x1="-553.3" y1="307.8" x2="-537.6" y2="292.2" stroke="#17110F" stroke-width="1.79"/>
+<text x="-553.3" y="0.0" font-size="17.92" fill="#17110F" text-anchor="middle" transform="rotate(-90 -553.3 0.0)">6,00</text>
+<line x1="-400.0" y1="398.4" x2="-85.0" y2="398.4" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="-407.8" y1="406.2" x2="-392.2" y2="390.6" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="-92.8" y1="406.2" x2="-77.2" y2="390.6" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="-242.5" y="390.6" font-size="17.92" fill="#5C4E46" text-anchor="middle">3,15</text>
+<line x1="-85.0" y1="398.4" x2="85.0" y2="398.4" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="-92.8" y1="406.2" x2="-77.2" y2="390.6" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="77.2" y1="406.2" x2="92.8" y2="390.6" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="0.0" y="390.6" font-size="17.92" fill="#5C4E46" text-anchor="middle">1,70</text>
+<line x1="85.0" y1="398.4" x2="400.0" y2="398.4" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="77.2" y1="406.2" x2="92.8" y2="390.6" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="392.2" y1="406.2" x2="407.8" y2="390.6" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="242.5" y="390.6" font-size="17.92" fill="#5C4E46" text-anchor="middle">3,15</text>
+<line x1="518.4" y1="-300.0" x2="518.4" y2="-265.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="510.6" y1="-292.2" x2="526.2" y2="-307.8" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="510.6" y1="-257.2" x2="526.2" y2="-272.8" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="510.6" y="-282.5" font-size="17.92" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 510.6 -282.5)">0,35</text>
+<line x1="518.4" y1="-265.0" x2="518.4" y2="-135.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="510.6" y1="-257.2" x2="526.2" y2="-272.8" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="510.6" y1="-127.2" x2="526.2" y2="-142.8" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="510.6" y="-200.0" font-size="17.92" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 510.6 -200.0)">1,30</text>
+<line x1="518.4" y1="-135.0" x2="518.4" y2="-65.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="510.6" y1="-127.2" x2="526.2" y2="-142.8" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="510.6" y1="-57.2" x2="526.2" y2="-72.8" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="510.6" y="-100.0" font-size="17.92" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 510.6 -100.0)">0,70</text>
+<line x1="518.4" y1="-65.0" x2="518.4" y2="65.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="510.6" y1="-57.2" x2="526.2" y2="-72.8" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="510.6" y1="72.8" x2="526.2" y2="57.2" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="510.6" y="0.0" font-size="17.92" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 510.6 0.0)">1,30</text>
+<line x1="518.4" y1="65.0" x2="518.4" y2="135.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="510.6" y1="72.8" x2="526.2" y2="57.2" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="510.6" y1="142.8" x2="526.2" y2="127.2" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="510.6" y="100.0" font-size="17.92" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 510.6 100.0)">0,70</text>
+<line x1="518.4" y1="135.0" x2="518.4" y2="265.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="510.6" y1="142.8" x2="526.2" y2="127.2" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="510.6" y1="272.8" x2="526.2" y2="257.2" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="510.6" y="200.0" font-size="17.92" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 510.6 200.0)">1,30</text>
+<line x1="518.4" y1="265.0" x2="518.4" y2="300.0" stroke="#5C4E46" stroke-width="1.12"/>
+<line x1="510.6" y1="272.8" x2="526.2" y2="257.2" stroke="#5C4E46" stroke-width="1.79"/>
+<line x1="510.6" y1="307.8" x2="526.2" y2="292.2" stroke="#5C4E46" stroke-width="1.79"/>
+<text x="510.6" y="282.5" font-size="17.92" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 510.6 282.5)">0,35</text>
+<rect x="-420.0" y="488.0" width="100" height="11.2" fill="#17110F" stroke="#17110F" stroke-width="1.12"/>
+<rect x="-320.0" y="488.0" width="100" height="11.2" fill="#FFFFFF" stroke="#17110F" stroke-width="1.12"/>
+<rect x="-220.0" y="488.0" width="100" height="11.2" fill="#17110F" stroke="#17110F" stroke-width="1.12"/>
+<text x="-420.0" y="526.1" font-size="16.80" fill="#5C4E46" text-anchor="middle">0</text>
+<text x="-320.0" y="526.1" font-size="16.80" fill="#5C4E46" text-anchor="middle">1</text>
+<text x="-220.0" y="526.1" font-size="16.80" fill="#5C4E46" text-anchor="middle">2</text>
+<text x="-120.0" y="526.1" font-size="16.80" fill="#5C4E46" text-anchor="middle">3</text>
+<text x="-108.0" y="526.1" font-size="16.80" fill="#5C4E46">m</text>
+<path d="M 33.6 456.6 L 47.0 503.7 L 20.2 503.7 Z" fill="#17110F"/>
+<text x="33.6" y="530.6" font-size="17.92" fill="#17110F" text-anchor="middle" font-weight="500">N</text>
+<rect x="-420.0" y="566.4" width="526.4" height="168.0" fill="#FFFFFF" stroke="#17110F" stroke-width="1.34"/>
+<line x1="-420.0" y1="613.4" x2="106.4" y2="613.4" stroke="#17110F" stroke-width="1.12"/>
+<text x="-404.3" y="597.8" font-size="19.04" fill="#17110F" letter-spacing="4.48" font-weight="500">MAISON OUVRAGE</text>
+<text x="90.7" y="597.8" font-size="16.80" fill="#5C4E46" text-anchor="end">Indice A</text>
+<text x="-404.3" y="644.8" font-size="23.52" fill="#17110F">Salon haussmannien</text>
+<text x="-404.3" y="676.2" font-size="16.80" fill="#5C4E46">Plan d’aménagement · Appartement · étage</text>
+<text x="-404.3" y="705.3" font-size="14.56" fill="#5C4E46">Surface 48 m² · hauteur sous plafond 3,50 m · cotes intérieures en mètres</text>
+</svg>

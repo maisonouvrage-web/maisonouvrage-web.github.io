@@ -1,0 +1,1 @@
+window.MO_SUPABASE = {"url": "https://zwsuvgksozbmybdfbgas.supabase.co", "key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3c3V2Z2tzb3pibXliZGZiZ2FzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU1MzE1MDgsImV4cCI6MjExMTEwNzUwOH0.ofSp3EdcUbwfAPf8YJZuU5u6RvsPjy94rrWB2vWyla8"};

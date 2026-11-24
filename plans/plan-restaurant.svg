@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-905.0 -655.0 1810.0 1825.0" font-family="Jost, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<defs><pattern id="zb" patternUnits="userSpaceOnUse" width="36.0" height="36.0" patternTransform="rotate(28)"><rect width="36.0" height="36.0" fill="#F4EEE6"/><rect width="15.0" height="36.0" fill="#17110F" opacity=".16"/></pattern></defs>
+<rect x="-905.0" y="-655.0" width="1810.0" height="1825.0" fill="#FFFFFF"/>
+<rect x="-600.0" y="-350.0" width="1200.0" height="700.0" fill="#FBF6EF"/>
+<line x1="-600.0" y1="-350.0" x2="-600.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-500.0" y1="-350.0" x2="-500.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-400.0" y1="-350.0" x2="-400.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-300.0" y1="-350.0" x2="-300.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-200.0" y1="-350.0" x2="-200.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-100.0" y1="-350.0" x2="-100.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="0.0" y1="-350.0" x2="0.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="100.0" y1="-350.0" x2="100.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="200.0" y1="-350.0" x2="200.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="300.0" y1="-350.0" x2="300.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="400.0" y1="-350.0" x2="400.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="500.0" y1="-350.0" x2="500.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="600.0" y1="-350.0" x2="600.0" y2="350.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-600.0" y1="-300.0" x2="600.0" y2="-300.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-600.0" y1="-200.0" x2="600.0" y2="-200.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-600.0" y1="-100.0" x2="600.0" y2="-100.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-600.0" y1="0.0" x2="600.0" y2="0.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-600.0" y1="100.0" x2="600.0" y2="100.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-600.0" y1="200.0" x2="600.0" y2="200.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<line x1="-600.0" y1="300.0" x2="600.0" y2="300.0" stroke="#EFEAE3" stroke-width="1.50"/>
+<g transform="translate(150.0 -210.0) rotate(-0.00)">
+<rect x="-270.0" y="-35.0" width="540.0" height="70.0" rx="4.2" fill="#EEDFD3" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-70.0 -140.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="20.0" ry="20.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(18.0 -140.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="20.0" ry="20.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(106.0 -140.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="20.0" ry="20.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(194.0 -140.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="20.0" ry="20.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(282.0 -140.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="20.0" ry="20.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(370.0 -140.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="20.0" ry="20.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(150.0 -320.0) rotate(-0.00)">
+<rect x="-280.0" y="-27.5" width="560.0" height="55.0" rx="3.3" fill="#EEDFD3" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-564.0 0.0) rotate(-0.00)">
+<rect x="-31.0" y="-300.0" width="62.0" height="600.0" rx="3.7" fill="#EEDFD3" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-495.0 -225.0) rotate(-0.00)">
+<rect x="-33.0" y="-33.0" width="66.0" height="66.0" rx="4.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-425.0 -225.0) rotate(90.00)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-495.0 -75.0) rotate(-0.00)">
+<rect x="-33.0" y="-33.0" width="66.0" height="66.0" rx="4.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-425.0 -75.0) rotate(90.00)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-495.0 75.0) rotate(-0.00)">
+<rect x="-33.0" y="-33.0" width="66.0" height="66.0" rx="4.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-425.0 75.0) rotate(90.00)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-495.0 225.0) rotate(-0.00)">
+<rect x="-33.0" y="-33.0" width="66.0" height="66.0" rx="4.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-425.0 225.0) rotate(90.00)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-160.0 20.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-208.0 25.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-112.0 15.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(30.0 60.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-18.0 65.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(78.0 55.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(220.0 20.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(172.0 25.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(268.0 15.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(410.0 60.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(362.0 65.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(458.0 55.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-160.0 200.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-208.0 205.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-112.0 195.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(30.0 240.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-18.0 245.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(78.0 235.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(220.0 200.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(172.0 205.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(268.0 195.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(410.0 240.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="31.0" ry="31.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(362.0 245.0) rotate(-101.46)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(458.0 235.0) rotate(78.54)">
+<ellipse cx="0" cy="0" rx="21.0" ry="21.0" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(540.0 290.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="24.2" ry="24.2" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<g transform="translate(-530.0 300.0) rotate(-0.00)">
+<ellipse cx="0" cy="0" rx="19.8" ry="19.8" fill="#FFFFFF" stroke="#5C4E46" stroke-width="2.40"/>
+</g>
+<text x="150.0" y="-201.0" font-size="25.50" fill="#5C4E46" text-anchor="middle" letter-spacing="1.50">COMPTOIR</text>
+<text x="150.0" y="-311.0" font-size="25.50" fill="#5C4E46" text-anchor="middle" letter-spacing="1.50">ARRIÈRE-BAR</text>
+<text x="-564.0" y="9.0" font-size="25.50" fill="#5C4E46" text-anchor="middle" letter-spacing="1.50" transform="rotate(-90 -564.0 0.0)">BANQUETTE</text>
+<rect x="-620.0" y="-370.0" width="75.0" height="20.0" fill="#5E1522"/>
+<rect x="-455.0" y="-370.0" width="1075.0" height="20.0" fill="#5E1522"/>
+<line x1="-545.0" y1="-350.0" x2="-545.0" y2="-260.0" stroke="#17110F" stroke-width="2.40"/>
+<path d="M -545.0 -260.0 A 90.0 90.0 0 0 0 -455.0 -350.0" fill="none" stroke="#5C4E46" stroke-width="1.50" stroke-dasharray="7.50 6.00"/>
+<line x1="-545.0" y1="-370.0" x2="-545.0" y2="-350.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="-455.0" y1="-370.0" x2="-455.0" y2="-350.0" stroke="#17110F" stroke-width="1.80"/>
+<rect x="-620.0" y="350.0" width="80.0" height="40.0" fill="#5E1522"/>
+<rect x="-200.0" y="350.0" width="100.0" height="40.0" fill="#5E1522"/>
+<rect x="100.0" y="350.0" width="100.0" height="40.0" fill="#5E1522"/>
+<rect x="540.0" y="350.0" width="80.0" height="40.0" fill="#5E1522"/>
+<line x1="-540.0" y1="367.0" x2="-200.0" y2="367.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="-540.0" y1="373.0" x2="-200.0" y2="373.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="-540.0" y1="350.0" x2="-200.0" y2="350.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-540.0" y1="390.0" x2="-200.0" y2="390.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-540.0" y1="350.0" x2="-540.0" y2="390.0" stroke="#17110F" stroke-width="2.10"/>
+<line x1="-200.0" y1="350.0" x2="-200.0" y2="390.0" stroke="#17110F" stroke-width="2.10"/>
+<line x1="-426.7" y1="364.0" x2="-426.7" y2="376.0" stroke="#17110F" stroke-width="3.00"/>
+<line x1="-313.3" y1="364.0" x2="-313.3" y2="376.0" stroke="#17110F" stroke-width="3.00"/>
+<line x1="-100.0" y1="367.0" x2="100.0" y2="367.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="-100.0" y1="373.0" x2="100.0" y2="373.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="-100.0" y1="350.0" x2="100.0" y2="350.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-100.0" y1="390.0" x2="100.0" y2="390.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-100.0" y1="350.0" x2="-100.0" y2="390.0" stroke="#17110F" stroke-width="2.10"/>
+<line x1="100.0" y1="350.0" x2="100.0" y2="390.0" stroke="#17110F" stroke-width="2.10"/>
+<line x1="0.0" y1="364.0" x2="0.0" y2="376.0" stroke="#17110F" stroke-width="3.00"/>
+<line x1="200.0" y1="367.0" x2="540.0" y2="367.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="200.0" y1="373.0" x2="540.0" y2="373.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="200.0" y1="350.0" x2="540.0" y2="350.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="200.0" y1="390.0" x2="540.0" y2="390.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="200.0" y1="350.0" x2="200.0" y2="390.0" stroke="#17110F" stroke-width="2.10"/>
+<line x1="540.0" y1="350.0" x2="540.0" y2="390.0" stroke="#17110F" stroke-width="2.10"/>
+<line x1="313.3" y1="364.0" x2="313.3" y2="376.0" stroke="#17110F" stroke-width="3.00"/>
+<line x1="426.7" y1="364.0" x2="426.7" y2="376.0" stroke="#17110F" stroke-width="3.00"/>
+<rect x="600.0" y="-350.0" width="20.0" height="220.0" fill="#5E1522"/>
+<rect x="600.0" y="170.0" width="20.0" height="180.0" fill="#5E1522"/>
+<line x1="600.0" y1="-130.0" x2="620.0" y2="-130.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="600.0" y1="170.0" x2="620.0" y2="170.0" stroke="#17110F" stroke-width="1.80"/>
+<line x1="610.0" y1="-130.0" x2="610.0" y2="170.0" stroke="#5C4E46" stroke-width="1.80" stroke-dasharray="15.00 9.00"/>
+<rect x="-620.0" y="-350.0" width="20.0" height="700.0" fill="#5E1522"/>
+<text x="100.0" y="125.0" font-size="33.00" fill="#5E1522" text-anchor="middle" letter-spacing="4.50" font-weight="500">SALLE</text>
+<text x="515.0" y="20.0" font-size="33.00" fill="#5E1522" text-anchor="middle" letter-spacing="4.50" font-weight="500">PASSE</text>
+<text x="515.0" y="59.0" font-size="22.50" fill="#5C4E46" text-anchor="middle">vers la cuisine</text>
+<line x1="-600.0" y1="-538.0" x2="600.0" y2="-538.0" stroke="#17110F" stroke-width="1.50"/>
+<line x1="-610.5" y1="-527.5" x2="-589.5" y2="-548.5" stroke="#17110F" stroke-width="2.40"/>
+<line x1="589.5" y1="-527.5" x2="610.5" y2="-548.5" stroke="#17110F" stroke-width="2.40"/>
+<text x="0.0" y="-548.5" font-size="24.00" fill="#17110F" text-anchor="middle">12,00</text>
+<line x1="-788.0" y1="-350.0" x2="-788.0" y2="350.0" stroke="#17110F" stroke-width="1.50"/>
+<line x1="-798.5" y1="-339.5" x2="-777.5" y2="-360.5" stroke="#17110F" stroke-width="2.40"/>
+<line x1="-798.5" y1="360.5" x2="-777.5" y2="339.5" stroke="#17110F" stroke-width="2.40"/>
+<text x="-798.5" y="0.0" font-size="24.00" fill="#17110F" text-anchor="middle" transform="rotate(-90 -798.5 0.0)">7,00</text>
+<line x1="-600.0" y1="-475.0" x2="-545.0" y2="-475.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-610.5" y1="-464.5" x2="-589.5" y2="-485.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="-555.5" y1="-464.5" x2="-534.5" y2="-485.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="-572.5" y="-485.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">0,55</text>
+<line x1="-545.0" y1="-475.0" x2="-455.0" y2="-475.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-555.5" y1="-464.5" x2="-534.5" y2="-485.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="-465.5" y1="-464.5" x2="-444.5" y2="-485.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="-500.0" y="-485.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">0,90</text>
+<line x1="-455.0" y1="-475.0" x2="600.0" y2="-475.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-465.5" y1="-464.5" x2="-444.5" y2="-485.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="589.5" y1="-464.5" x2="610.5" y2="-485.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="72.5" y="-485.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">10,55</text>
+<line x1="-600.0" y1="495.0" x2="-540.0" y2="495.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-610.5" y1="505.5" x2="-589.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="-550.5" y1="505.5" x2="-529.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="-570.0" y="484.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">0,60</text>
+<line x1="-540.0" y1="495.0" x2="-200.0" y2="495.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-550.5" y1="505.5" x2="-529.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="-210.5" y1="505.5" x2="-189.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="-370.0" y="484.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">3,40</text>
+<line x1="-200.0" y1="495.0" x2="-100.0" y2="495.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-210.5" y1="505.5" x2="-189.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="-110.5" y1="505.5" x2="-89.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="-150.0" y="484.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">1,00</text>
+<line x1="-100.0" y1="495.0" x2="100.0" y2="495.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="-110.5" y1="505.5" x2="-89.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="89.5" y1="505.5" x2="110.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="0.0" y="484.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">2,00</text>
+<line x1="100.0" y1="495.0" x2="200.0" y2="495.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="89.5" y1="505.5" x2="110.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="189.5" y1="505.5" x2="210.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="150.0" y="484.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">1,00</text>
+<line x1="200.0" y1="495.0" x2="540.0" y2="495.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="189.5" y1="505.5" x2="210.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="529.5" y1="505.5" x2="550.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="370.0" y="484.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">3,40</text>
+<line x1="540.0" y1="495.0" x2="600.0" y2="495.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="529.5" y1="505.5" x2="550.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="589.5" y1="505.5" x2="610.5" y2="484.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="570.0" y="484.5" font-size="24.00" fill="#5C4E46" text-anchor="middle">0,60</text>
+<line x1="725.0" y1="-350.0" x2="725.0" y2="-130.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="714.5" y1="-339.5" x2="735.5" y2="-360.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="714.5" y1="-119.5" x2="735.5" y2="-140.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="714.5" y="-240.0" font-size="24.00" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 714.5 -240.0)">2,20</text>
+<line x1="725.0" y1="-130.0" x2="725.0" y2="170.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="714.5" y1="-119.5" x2="735.5" y2="-140.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="714.5" y1="180.5" x2="735.5" y2="159.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="714.5" y="20.0" font-size="24.00" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 714.5 20.0)">3,00</text>
+<line x1="725.0" y1="170.0" x2="725.0" y2="350.0" stroke="#5C4E46" stroke-width="1.50"/>
+<line x1="714.5" y1="180.5" x2="735.5" y2="159.5" stroke="#5C4E46" stroke-width="2.40"/>
+<line x1="714.5" y1="360.5" x2="735.5" y2="339.5" stroke="#5C4E46" stroke-width="2.40"/>
+<text x="714.5" y="260.0" font-size="24.00" fill="#5C4E46" text-anchor="middle" transform="rotate(-90 714.5 260.0)">1,80</text>
+<rect x="-620.0" y="615.0" width="100" height="15.0" fill="#17110F" stroke="#17110F" stroke-width="1.50"/>
+<rect x="-520.0" y="615.0" width="100" height="15.0" fill="#FFFFFF" stroke="#17110F" stroke-width="1.50"/>
+<rect x="-420.0" y="615.0" width="100" height="15.0" fill="#17110F" stroke="#17110F" stroke-width="1.50"/>
+<text x="-620.0" y="666.0" font-size="22.50" fill="#5C4E46" text-anchor="middle">0</text>
+<text x="-520.0" y="666.0" font-size="22.50" fill="#5C4E46" text-anchor="middle">1</text>
+<text x="-420.0" y="666.0" font-size="22.50" fill="#5C4E46" text-anchor="middle">2</text>
+<text x="-320.0" y="666.0" font-size="22.50" fill="#5C4E46" text-anchor="middle">3</text>
+<text x="-308.0" y="666.0" font-size="22.50" fill="#5C4E46">m</text>
+<path d="M -155.0 573.0 L -137.0 636.0 L -173.0 636.0 Z" fill="#17110F"/>
+<text x="-155.0" y="672.0" font-size="24.00" fill="#17110F" text-anchor="middle" font-weight="500">N</text>
+<rect x="-620.0" y="720.0" width="705.0" height="225.0" fill="#FFFFFF" stroke="#17110F" stroke-width="1.80"/>
+<line x1="-620.0" y1="783.0" x2="85.0" y2="783.0" stroke="#17110F" stroke-width="1.50"/>
+<text x="-599.0" y="762.0" font-size="25.50" fill="#17110F" letter-spacing="6.00" font-weight="500">MAISON OUVRAGE</text>
+<text x="64.0" y="762.0" font-size="22.50" fill="#5C4E46" text-anchor="end">Indice A</text>
+<text x="-599.0" y="825.0" font-size="31.50" fill="#17110F">Restaurant bistronomique</text>
+<text x="-599.0" y="867.0" font-size="22.50" fill="#5C4E46">Plan d’aménagement · Rez-de-chaussée sur rue</text>
+<text x="-599.0" y="906.0" font-size="19.50" fill="#5C4E46">Surface 84 m² · hauteur sous plafond 3,60 m · cotes intérieures en mètres</text>
+</svg>
