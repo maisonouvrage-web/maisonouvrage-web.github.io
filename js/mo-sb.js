@@ -32,9 +32,11 @@
   });
   ready.then(function () {
     if (hadToken) {
-      setTimeout(function () {
-        location.hash = "espace";
-      }, 30);
+      estAdmin().then(function (a) {
+        setTimeout(function () {
+          location.hash = a ? "admin" : "espace";
+        }, 30);
+      });
     }
   });
 
@@ -319,6 +321,7 @@
     location.reload();
   }
   window.MO_SB = {
+    admin: estAdmin,
     sb: sb,
     ready: ready,
     reel: reel,

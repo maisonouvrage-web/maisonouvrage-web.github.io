@@ -4126,21 +4126,27 @@ body.iaOn .iaFab{display:none}
     d.id = "moOut";
     d.className = "moOut";
     d.innerHTML =
-      "<span>" +
-      e(S.email()) +
-      '</span><button type="button">Se déconnecter</button>';
+      "<span>" + e(S.email()) + "</span>" +
+      '<a class="moAt" href="#admin" hidden>Mon atelier</a>' +
+      '<a class="moEs" href="#espace">Mon espace</a>' +
+      '<button type="button">Se déconnecter</button>';
     d.querySelector("button").onclick = S.quitter;
     document.body.appendChild(d);
+    var adm = false;
     var maj = function () {
       var h = (location.hash || "").replace("#", "");
-      d.hidden = !(h.indexOf("espace") === 0 || h.indexOf("admin") === 0);
+      var at = d.querySelector(".moAt"), es = d.querySelector(".moEs");
+      at.hidden = !adm || h.indexOf("admin") === 0;
+      es.hidden = h.indexOf("espace") === 0 || (adm && h.indexOf("admin") !== 0 && false);
     };
+    S.admin().then(function (a) { adm = !!a; maj(); });
     maj();
     addEventListener("hashchange", maj);
   }
+  S.ready.then(function () { if (S.reel()) pastille(); });
   var st = document.createElement("style");
   st.textContent =
-    ".moLog{margin-top:22px;max-width:420px}.moLog .fld{display:flex;flex-direction:column;gap:6px}.moLog input{font:inherit;padding:12px 14px;border:1px solid var(--fil,#d9cfc3);border-radius:10px;background:#fff}.moOut{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:10px;align-items:center;background:#FBF8F3;border:1px solid #d9cfc3;border-radius:999px;padding:6px 8px 6px 14px;font-size:13px;color:#1C1613;box-shadow:0 6px 20px rgba(28,22,19,.08)}.moOut button{font:inherit;font-size:12px;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px;padding:5px 10px;cursor:pointer}.moOut[hidden]{display:none}@media(max-width:600px){.moOut span{display:none}}";
+    ".moLog{margin-top:22px;max-width:420px}.moLog .fld{display:flex;flex-direction:column;gap:6px}.moLog input{font:inherit;padding:12px 14px;border:1px solid var(--fil,#d9cfc3);border-radius:10px;background:#fff}.moOut{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:10px;align-items:center;background:#FBF8F3;border:1px solid #d9cfc3;border-radius:999px;padding:6px 8px 6px 14px;font-size:13px;color:#1C1613;box-shadow:0 6px 20px rgba(28,22,19,.08)}.moOut a{font-size:12px;color:#FBF8F3;background:#5E1522;border-radius:999px;padding:5px 12px;text-decoration:none}.moOut a[hidden]{display:none}.moOut button{font:inherit;font-size:12px;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px;padding:5px 10px;cursor:pointer}.moOut[hidden]{display:none}@media(max-width:600px){.moOut span{display:none}}";
   document.head.appendChild(st);
 })();
 
