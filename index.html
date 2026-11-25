@@ -3605,6 +3605,18 @@ html.mnOuvert {
 .mnCube[data-f="4"] .mnChem,.mnCube[data-f="4"] .mnChem::before{box-shadow:0 0 14px rgba(94,21,34,.35)}
 .mnCube[data-f="4"] .mnChem i{background:radial-gradient(60% 70% at 50% 100%,#5E1522,rgba(94,21,34,.4) 60%,transparent)}
 .mnCube[data-f="5"] .mnLustre i,.mnCube[data-f="5"] .mnRos{box-shadow:0 0 14px rgba(94,21,34,.45)}
+/* menu · plus raffiné, sans numéros ni mentions (25/11) */
+.mnL em,.mnK,.mnLeg,.mnCote{display:none!important}
+.mnO::before{background:radial-gradient(45% 75% at 80% 55%,rgba(94,21,34,.06),transparent 70%)}
+.mnTop{border-bottom:0;padding-bottom:4px}
+.mnL{gap:0 clamp(28px,4vw,64px)}
+.mnL a{gap:0;padding:18px 0;border-bottom-color:rgba(28,22,19,.08)}
+.mnL b{font-size:clamp(22px,2.1vw,30px);letter-spacing:.005em}
+.mnL small{font-size:12px;letter-spacing:.06em}
+.mnScene{gap:0;padding:56px 0 96px}
+.mnS{gap:8px}
+.mnS a{font-size:10.5px;letter-spacing:.2em;padding:8px 14px}
+@media (max-width:860px){.mnScene{justify-self:center;padding:26px 0 30px}.mnCube{--s:110px}}
 /* menu principal · présentation resserrée (25/11) */
 @media (min-width:1281px){.nav{flex:1 1 auto;justify-content:center;gap:0}.nav a{font-size:10.5px;letter-spacing:.17em;padding:10px 17px}.nav a::after{left:17px;right:17px}.nav a+a::before{content:"";position:absolute;left:-2px;top:50%;width:4px;height:4px;border:1px solid var(--bdx);transform:translateY(-50%) rotate(45deg);opacity:.4}.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:8px 18px;margin-left:14px;transition:background .35s ease,color .35s ease}.nav a.navClub::before,.nav a.navClub::after{display:none}.nav a.navClub:hover,.nav a.navClub[aria-current="page"]{background:var(--bdx);color:var(--blanc)!important}}
 @media (max-width:1280px){.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:6px 13px;margin:6px 0}.nav a.navClub::after{display:none}}
