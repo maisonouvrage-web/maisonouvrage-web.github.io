@@ -3617,6 +3617,43 @@ html.mnOuvert {
 .mnS{gap:8px}
 .mnS a{font-size:10.5px;letter-spacing:.2em;padding:8px 14px}
 @media (max-width:860px){.mnScene{justify-self:center;padding:26px 0 30px}.mnCube{--s:110px}}
+/* menu · carte compacte sous l'en-tête, animation affinée (25/11) */
+html.mnOuvert .hdr{z-index:85}
+.mnV{background:rgba(28,22,19,.16);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.mnO{left:auto;right:max(16px,calc((100vw - 1340px) / 2 + 12px));top:calc(var(--hdr) + 8px);width:min(600px,calc(100% - 32px));max-height:calc(100vh - var(--hdr) - 24px);border-radius:22px;border:1px solid #E4DBCF;box-shadow:0 30px 60px -30px rgba(28,22,19,.35),0 2px 6px rgba(28,22,19,.05);transform-origin:calc(100% - 36px) 0;transform:perspective(1200px) rotateX(-28deg) scale(.88) translateY(-10px);opacity:0;clip-path:inset(0 0 100% 0 round 22px);transition:transform .75s cubic-bezier(.16,.9,.2,1),opacity .3s ease,clip-path .75s cubic-bezier(.16,.9,.2,1)}
+.mnO.on{transform:none;opacity:1;clip-path:inset(0 0 0 0 round 22px)}
+.mnO::after{display:none}
+.mnIn{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;width:auto;margin:0;padding:22px 10px 18px 30px;gap:0 6px}
+.mnTop{display:none}
+.mnL{grid-column:1;grid-row:1;grid-template-columns:1fr;padding:0;align-content:start;gap:0}
+.mnL a{padding:8px 0;border-bottom:0;transform:translateX(-16px);opacity:0;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.mnO.on .mnL a{transform:none;opacity:1}
+.mnL small{display:none}
+.mnL b{position:relative;font-size:20px;letter-spacing:.01em;transition:color .3s ease}
+.mnL b::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:#5E1522;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.mnL a:hover b,.mnL a:focus-visible b{transform:none;font-style:normal;color:#5E1522}
+.mnL a:hover b::after,.mnL a:focus-visible b::after,.mnL a[aria-current] b::after{transform:scaleX(1)}
+.mnL a[aria-current] b{font-style:normal}
+.mnScene{grid-column:2;grid-row:1/3;align-self:center;padding:14px 60px 40px 34px;transform:scale(.6);transition:opacity .6s ease .15s,transform .9s cubic-bezier(.2,.9,.2,1) .1s}
+.mnCube{--s:136px}
+.mnS a[data-mr="contact"]{display:none}
+.mnS{grid-column:1;grid-row:2;margin-top:12px;padding-top:12px;border-top:1px solid #E4DBCF;gap:4px 16px;transition:opacity .5s ease .35s}
+.mnS a{border:0;border-radius:0;padding:4px 0;font-size:9.5px;letter-spacing:.2em;color:#8a7d73}
+.mnS a:hover,.mnS a[aria-current]{background:none;color:#5E1522}
+.mnB i{transform-origin:center}
+html.mnOuvert .mnB i:nth-child(1){width:22px;transform:translateY(6.5px) rotate(45deg)}
+html.mnOuvert .mnB i:nth-child(2){width:0;opacity:0}
+html.mnOuvert .mnB i:nth-child(3){width:22px;transform:translateY(-6.5px) rotate(-45deg)}
+@media (max-width:860px){
+  .mnO{left:12px;right:12px;width:auto;top:calc(var(--hdr) + 4px);border-radius:20px}
+  .mnIn{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;padding:18px 6px 14px 22px;width:auto}
+  .mnL{grid-column:1;grid-row:1}
+  .mnL a{padding:7px 0}
+  .mnL b{font-size:19px}
+  .mnScene{grid-column:2;grid-row:1;justify-self:center;align-self:center;padding:6px 26px 24px 10px;flex-direction:column}
+  .mnCube{--s:84px}
+  .mnS{grid-column:1/-1;grid-row:2}
+}
 /* menu principal · présentation resserrée (25/11) */
 @media (min-width:1281px){.nav{flex:1 1 auto;justify-content:center;gap:0}.nav a{font-size:10.5px;letter-spacing:.17em;padding:10px 17px}.nav a::after{left:17px;right:17px}.nav a+a::before{content:"";position:absolute;left:-2px;top:50%;width:4px;height:4px;border:1px solid var(--bdx);transform:translateY(-50%) rotate(45deg);opacity:.4}.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:8px 18px;margin-left:14px;transition:background .35s ease,color .35s ease}.nav a.navClub::before,.nav a.navClub::after{display:none}.nav a.navClub:hover,.nav a.navClub[aria-current="page"]{background:var(--bdx);color:var(--blanc)!important}}
 @media (max-width:1280px){.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:6px 13px;margin:6px 0}.nav a.navClub::after{display:none}}
@@ -9506,6 +9543,7 @@ renderProj(); route();
     if (ouvert) return;
     ouvert = true;
     marquer();
+    ry = cible - 220;
     o.hidden = false;
     voile.hidden = false;
     document.documentElement.classList.add("mnOuvert");
