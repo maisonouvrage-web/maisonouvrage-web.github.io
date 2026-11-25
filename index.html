@@ -3892,7 +3892,7 @@ i.mo-fl.mo-fl-cl{background:currentColor}
       <aside class="ctS rv d1">
         <div class="ctU"><span class="ctUk">Votre interlocutrice unique</span><b>Une seule personne, du premier appel à la réception</b><p>Elle choisit les entreprises, relit chaque devis et suit le chantier à vos côtés · vous n'avez jamais à vous répéter</p>
           <ol class="ctUs"><li><i>1</i>Un appel sous 48 heures</li><li><i>2</i>Une rencontre sur place ou à distance</li></ol>
-          <span class="ctUp">Sans honoraires pour les particuliers</span><a class="ctMail" href="mailto:maisonouvrage@gmail.com"><span>Par e-mail</span>maisonouvrage@gmail.com</a></div>
+          <span class="ctUp">Sans honoraires pour les particuliers</span><a class="ctMail" href="mailto:maisonouvrage@gmail.com"><span>Par e-mail</span>maisonouvrage@gmail.com</a><a class="ctMail" href="https://calendly.com/maisonouvrage/echange-decouverte-maison-ouvrage" target="_blank" rel="noopener"><span>En visioconférence</span>Réserver un échange de 15 minutes</a></div>
         <p class="ctL"><a href="#espace">Déjà client · suivre mon projet</a><a href="#partenariats">Professionnels · nos partenariats</a></p>
       </aside>
     </div>
@@ -4039,7 +4039,7 @@ i.mo-fl.mo-fl-cl{background:currentColor}
     </div>
     <div style="display:flex;flex-direction:column;gap:18px" class="rv d1">
       <span class="muted">Votre interlocutrice unique</span>
-      <div class="btns"><a class="btn plein" href="#contact">Écrire une demande <span class="fl" aria-hidden="true"><i class="mo-fl" aria-hidden="true"></i></span></a></div>
+      <div class="btns"><a class="btn plein" href="#contact">Écrire une demande <span class="fl" aria-hidden="true"><i class="mo-fl" aria-hidden="true"></i></span></a><a class="btn" href="https://calendly.com/maisonouvrage/echange-decouverte-maison-ouvrage" target="_blank" rel="noopener">Réserver un échange</a></div>
     </div>
   </div>
 </aside>
@@ -7958,12 +7958,12 @@ const PX_LOGO = 'iVBORw0KGgoAAAANSUhEUgAAAvQAAACiCAIAAACh9s6CAAAQAElEQVR4AeydBVw
     syndic: ['Pour les travaux de vos copropriétés, nous pouvons :', ['consulter plusieurs entreprises vérifiées sur un même cahier des charges', 'préparer un tableau comparatif clair, prêt à être présenté en assemblée générale', 'suivre le chantier jusqu\'à la réception, en lien avec le gestionnaire'], 'Notre accompagnement n\'est facturé ni à la copropriété ni au syndic : nous sommes rémunérés par les entreprises retenues, sans incidence sur les prix présentés.'],
     marche: ['Pour cette consultation, nous pouvons :', ['constituer une équipe d\'entreprises vérifiées et complémentaires, adaptée aux lots', 'préparer avec elle un dossier de réponse clair et soigné', 'suivre le chantier jusqu\'à la réception si le marché est attribué'], 'Notre intervention est encadrée par une convention écrite et n\'est rémunérée que si le marché est obtenu.'],
     autre: ['Concrètement, nous pouvons :', ['consulter des entreprises et des artisans d\'art vérifiés sur un descriptif commun', 'vous remettre des offres comparées et commentées', 'suivre le chantier jusqu\'à la réception'], 'Notre accompagnement ne vous est pas facturé : nous sommes rémunérés par les entreprises retenues, selon une convention écrite.'] };
-  const LA = { agence: 'Seriez-vous disponible cette semaine pour un échange de quinze minutes ? Nous pourrions vous présenter un exemple sur l\'un de vos biens.', marche: 'Seriez-vous disponible pour un court échange avant la date limite ?', def: 'Seriez-vous disponible pour un échange de quinze minutes dans les prochains jours ? Nous nous adapterons volontiers à votre agenda.' };
+  const LA = { agence: 'Seriez-vous disponible cette semaine pour un échange de quinze minutes ? Nous pourrions vous présenter un exemple sur l\'un de vos biens, au créneau qui vous convient.', marche: 'Seriez-vous disponible pour un court échange avant la date limite ?', def: 'Seriez-vous disponible pour un échange de quinze minutes dans les prochains jours ? Vous pouvez choisir directement le créneau qui vous convient.' };
   const SIGT = '\n\nBien cordialement,\n\nMaison Ouvrage\nRénovation de prestige\nmaisonouvrage@gmail.com\nmaisonouvrage-web.github.io\n\nVous recevez ce message à titre professionnel. Pour ne plus être contacté, il suffit de répondre « stop ».';
   const L = (t) => String(t || '').split('\n').map((l) => l.trim().replace(/^[-–•\d.)]+\s*/, '').replace(/[;.]$/, '')).filter(Boolean);
   const s0 = pxStruct; pxStruct = function (x) { const b = s0(x), o = LO[x.cat] || LO.autre;
     return { acc: pt(x.acc || b.acc), qui: LQ, offre: o[0], etapes: o[1].join('\n'), modal: o[2], appel: LA[x.cat] || LA.def }; };
-  pxAssemble = (b) => { const E = L(b.etapes); return 'Bonjour,\n\n' + pt(b.acc) + '\n\n' + pt(b.qui) + '\n\n' + String(b.offre || '').trim() + '\n' + E.map((l, i) => '- ' + l + (i < E.length - 1 ? ' ;' : '.')).join('\n') + '\n\n' + pt(b.modal) + '\n\n' + pt(b.appel) + SIGT; };
+  pxAssemble = (b) => { const E = L(b.etapes); return 'Bonjour,\n\n' + pt(b.acc) + '\n\n' + pt(b.qui) + '\n\n' + String(b.offre || '').trim() + '\n' + E.map((l, i) => '- ' + l + (i < E.length - 1 ? ' ;' : '.')).join('\n') + '\n\n' + pt(b.modal) + '\n\n' + pt(b.appel) + '\nChoisir un créneau : https://calendly.com/maisonouvrage/echange-decouverte-maison-ouvrage' + SIGT; };
   const H = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   pxHtml = function (b) { const E = L(b.etapes), p = (t) => '<p style="margin:0 0 14px">' + H(pt(t)) + '</p>';
     return '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#222;max-width:600px">' +
@@ -7971,6 +7971,7 @@ const PX_LOGO = 'iVBORw0KGgoAAAANSUhEUgAAAvQAAACiCAIAAACh9s6CAAAQAElEQVR4AeydBVw
       p('Bonjour,') + p(b.acc) + p(b.qui) +
       '<p style="margin:0 0 6px">' + H(String(b.offre || '').trim()) + '</p><ul style="margin:0 0 14px;padding-left:22px">' + E.map((l, i) => '<li style="margin:0 0 4px">' + H(l) + (i < E.length - 1 ? ' ;' : '.') + '</li>').join('') + '</ul>' +
       p(b.modal) + p(b.appel) +
+      '<p style="margin:4px 0 20px"><a href="https://calendly.com/maisonouvrage/echange-decouverte-maison-ouvrage" style="display:inline-block;background:#5E1522;color:#ffffff;text-decoration:none;padding:10px 20px;border-radius:3px;font-size:14px">Choisir un créneau de 15 minutes</a></p>' +
       '<p style="margin:22px 0 16px">Bien cordialement,</p>' +
       '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse"><tr><td style="border-left:2px solid #5E1522;padding:2px 0 2px 12px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#555">' +
       '<b style="font-weight:600;color:#1C1613">Maison Ouvrage</b><br>' +
