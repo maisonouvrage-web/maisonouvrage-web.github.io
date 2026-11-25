@@ -3809,94 +3809,13 @@ body.iaOn .iaFab{display:none}
         <div class="ctU"><span class="ctUk">Votre interlocutrice unique</span><b>Une seule personne, du premier appel à la réception</b><p>Elle choisit les entreprises, relit chaque devis et suit le chantier à vos côtés · vous n'avez jamais à vous répéter</p>
           <ol class="ctUs"><li><i>1</i>Un appel sous 48 heures</li><li><i>2</i>Une rencontre sur place ou à distance</li></ol>
           <span class="ctUp">Sans honoraires pour les particuliers</span><a class="ctMail" href="mailto:maisonouvrage@gmail.com"><span>Par e-mail</span>maisonouvrage@gmail.com</a></div>
-        <p class="ctL"><a href="#espace">Déjà client · suivre mon projet</a><a href="#avis">Les avis de nos clients</a><a href="#partenariats">Professionnels · nos partenariats</a></p>
+        <p class="ctL"><a href="#espace">Déjà client · suivre mon projet</a><a href="#partenariats">Professionnels · nos partenariats</a></p>
       </aside>
     </div>
   </div></div>
 </section>
 
 <!-- ================================================================ AVIS -->
-<section class="page" data-page="avis" aria-label="Avis clients">
-  <div class="band"><div class="wrap">
-    <div class="head2">
-      <div>
-        <span class="k rv">Avis clients</span>
-        <h1 class="h-xl rv">La parole à ceux qui nous ont <span class="it">confié leur projet</span></h1>
-        <span class="court rv"></span>
-      </div>
-      <div>
-        <p class="lead rv d1">Nous préférons un avis franc à un compliment poli : chaque retour, élogieux ou exigeant, nous aide à mieux choisir nos artisans et à mieux vous accompagner</p>
-      </div>
-    </div>
-
-    <div class="sat rv" id="sat" aria-live="polite">
-      <div class="satNote">
-        <span class="k m">Satisfaction globale</span>
-        <div class="satBig"><b id="satMoy">—</b><span>/ 5</span></div>
-        <div class="stars lg" id="satStars" aria-hidden="true"></div>
-        <span class="muted" id="satNb">Les premiers avis paraîtront ici dès leur vérification</span>
-      </div>
-      <div class="satReco">
-        <svg viewBox="0 0 120 120" class="ring" aria-hidden="true"><circle cx="60" cy="60" r="52" class="rg0"/><circle cx="60" cy="60" r="52" class="rg1" id="satRing" pathLength="100"/></svg>
-        <div class="ringT"><b id="satPct">—</b><span>recommandent<br>Maison Ouvrage</span></div>
-      </div>
-      <div class="satDist">
-        <span class="k m">Répartition des notes</span>
-        <ul id="satBars"></ul>
-      </div>
-      <div class="satCrit">
-        <span class="k m">Note par critère</span>
-        <ul id="satCrit"></ul>
-      </div>
-    </div>
-
-  </div></div>
-
-  <div class="band beige" id="avPub" hidden><div class="wrap">
-    <div class="avTop">
-      <div style="display:flex;flex-direction:column;gap:12px"><span class="k rv">Avis publiés</span><h2 class="h-l rv">Ce qu'ils en <span class="it">disent</span></h2></div>
-      <div class="avFil rv d1" id="avFil" role="group" aria-label="Filtrer par note"></div>
-    </div>
-    <div class="avList" id="avList"><p class="avVide">Les avis de nos clients seront publiés ici, sans sélection ni retouche · vous avez mené un projet avec nous ? <a href="#laisser-un-avis">Soyez le premier à témoigner</a></p></div>
-  </div></div>
-
-  <div class="band" id="laisser-un-avis"><div class="wrap avForm">
-    <div style="display:flex;flex-direction:column;gap:20px">
-      <span class="k rv">Laisser un avis</span>
-      <h2 class="h-l rv">Votre regard <span class="it">nous fait progresser</span></h2>
-      <span class="court rv"></span>
-      <p class="rv d1">Dites-nous ce qui vous a convaincu et ce qui mérite d'être amélioré : un avis précis et nuancé est le plus utile, pour nous comme pour les futurs clients</p>
-      <ol class="apres rv d2"><li><b>Vous déposez votre avis</b><span>en cinq minutes, sans compte à créer</span></li><li><b>Nous le rapprochons de votre projet</b><span>pour garantir son authenticité</span></li></ol>
-    </div>
-    <form class="fcard" id="avForm" novalidate>
-      <div class="fld"><span class="lbl">Votre note globale</span><div class="pick" data-k="note" role="radiogroup" aria-label="Note globale"></div></div>
-      <div class="critF" id="critF"></div>
-      <div class="fld"><span class="lbl">Recommanderiez-vous Maison Ouvrage ?</span><div class="opts" data-k="reco"><button type="button" class="opt" data-v="oui">Oui, sans hésiter</button><button type="button" class="opt" data-v="non">Pas en l'état</button></div></div>
-      <div class="avG2">
-        <div class="fld"><label for="av-type">Votre projet</label><select id="av-type"><option value="">Choisir</option><option>Rénovation complète</option><option>Rénovation partielle</option><option>Cuisine ou salle de bains</option><option>Rénovation avant la vente</option><option>Modélisation 3D</option><option>Partenariat professionnel</option><option>Autre</option></select></div>
-        <div class="fld"><label for="av-date">Fin du projet</label><input id="av-date" type="month"></div>
-      </div>
-      <div class="fld"><label for="av-titre">Votre avis en une phrase</label><input id="av-titre" maxlength="90"></div>
-      <div class="fld"><label for="av-plus">Ce qui vous a convaincu</label><textarea id="av-plus" rows="3" maxlength="1200"></textarea></div>
-      <div class="fld"><label for="av-moins">Ce que nous pourrions améliorer</label><textarea id="av-moins" rows="3" maxlength="1200" placeholder="Facultatif, mais précieux"></textarea></div>
-      <div class="avG2">
-        <div class="fld"><label for="av-nom">Prénom et initiale</label><input id="av-nom" maxlength="40" placeholder="Claire D"></div>
-        <div class="fld"><label for="av-ville">Ville</label><input id="av-ville" maxlength="40"></div>
-      </div>
-      <label class="chk"><input type="checkbox" id="av-ok"><span>J'atteste avoir mené un projet avec Maison Ouvrage et j'accepte la publication de mon avis sous mon prénom et l'initiale de mon nom · <a href="#confidentialite">Confidentialité</a></span></label>
-      <p class="avErr" id="avErr" role="alert"></p>
-      <button type="button" class="btn plein" id="avGo">Envoyer mon avis <span class="fl" aria-hidden="true">→</span></button>
-      <p class="avOk" id="avOk" aria-live="polite"></p>
-    </form>
-  </div></div>
-
-  <div class="band tight beige" id="modo" hidden><div class="wrap">
-    <span class="k">Espace de modération · visible des seuls administrateurs</span>
-    <h2 class="h-m" style="margin:10px 0 6px">Avis en attente</h2>
-    <p class="muted" style="font-size:14px;max-width:760px">Vérifiez que l'auteur est bien un client, puis publiez l'avis tel quel, critique ou non · la loi interdit de trier les avis selon leur note ou de les modifier</p>
-    <div id="modoList" class="modoL"></div>
-  </div></div>
-</section>
 
 <!-- ================================================================ ESPACE CLIENT -->
 <section class="page" data-page="espace" aria-label="Mon espace">
@@ -4045,7 +3964,7 @@ body.iaOn .iaFab{display:none}
   <div class="fT">
     <div class="fB"><a class="brand" href="#accueil"><svg width="34" height="34" aria-hidden="true"><use href="#mo"/></svg><b>Maison <i>Ouvrage</i></b></a><span>Apporteur d'affaires · rénovation d'exception</span></div>
     <nav class="fN" aria-label="Plan du site">
-      <div><span class="k m">La maison</span><a href="#artisans">Nos artisans</a><a href="#equipe">L'équipe</a><a href="#avis">Avis clients</a><a href="#rejoindre">Rejoindre le réseau</a><a href="#club">Club partenaires</a></div>
+      <div><span class="k m">La maison</span><a href="#artisans">Nos artisans</a><a href="#equipe">L'équipe</a><a href="#rejoindre">Rejoindre le réseau</a><a href="#club">Club partenaires</a></div>
       <div><span class="k m">Vos projets</span><a href="#vendre">Vendre un bien</a><a href="#modelisation">Modélisation 3D</a><a href="#visite">Visite 3D</a><a href="#collaborer">Travailler ensemble</a></div>
     </nav>
     <div class="fC"><span class="k m">Votre interlocutrice</span><a class="fMail" href="mailto:maisonouvrage@gmail.com">maisonouvrage@gmail.com</a><div class="fL"><a href="#contact">Écrire une demande</a><a href="#espace">Mon espace</a></div></div>
@@ -4440,128 +4359,6 @@ const starsH = (n) => { let h = ''; for (let i = 1; i <= 5; i++) h += '<span cla
 const fmtMois = (v) => { const m = /^(\d{4})-(\d{2})$/.exec(v || ''); return m ? MOIS[+m[2] - 1] + ' ' + m[1] : ''; };
 const fmtJour = (v) => { const d = new Date(v); return isNaN(d) ? '' : d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }); };
 const fr1 = (x) => x.toFixed(1).replace('.', ',');
-const AVP = { list: [], fil: 0, seen: false, admin: false, db: null, uid: null };
-
-function satFill() {
-  AVP.seen = true; const L = AVP.list, n = L.length, sat = $('#sat');
-  sat.classList.toggle('vide', !n);
-  const moy = n ? L.reduce((s, a) => s + (+a.note || 0), 0) / n : 0;
-  const rr = L.filter((a) => a.reco === 'oui' || a.reco === 'non'), pct = rr.length ? Math.round(rr.filter((a) => a.reco === 'oui').length / rr.length * 100) : 0;
-  $('#satMoy').textContent = n ? fr1(moy) : '—';
-  $('#satStars').innerHTML = starsH(moy);
-  $('#satNb').textContent = n ? 'Sur ' + n + ' avis vérifié' + (n > 1 ? 's' : '') + ' · tous publiés' : 'Les premiers avis paraîtront ici dès leur vérification';
-  $('#satPct').textContent = rr.length ? pct + ' %' : '—';
-  $('#satRing').style.strokeDasharray = (rr.length ? pct : 0) + ' 100';
-  $('#satBars').innerHTML = [5, 4, 3, 2, 1].map((k) => { const c = L.filter((a) => Math.round(+a.note) === k).length; return '<li class="bar"><span>' + k + ' ★</span><i><b data-w="' + (n ? c / n * 100 : 0) + '"></b></i><em>' + c + '</em></li>'; }).join('');
-  $('#satCrit').innerHTML = CRIT.map(([k, l]) => { const v = L.map((a) => +(a.crit || {})[k]).filter((x) => x > 0), m = v.length ? v.reduce((s, x) => s + x, 0) / v.length : 0; return '<li class="crit"><div><span>' + l + '</span><em>' + (m ? fr1(m) : '—') + '</em></div><i><b data-w="' + m / 5 * 100 + '"></b></i></li>'; }).join('');
-  requestAnimationFrame(() => requestAnimationFrame(() => $$('#sat [data-w]').forEach((b) => { b.style.width = b.dataset.w + '%'; })));
-}
-
-function avCard(a, admin) {
-  const meta = [fmtMois(a.date) ? 'Projet achevé en ' + fmtMois(a.date) : '', a.type, a.ville].filter(Boolean).map((t) => '<span>' + esc(t) + '</span>').join('');
-  return '<article class="av rv"><div class="stars" aria-label="Note ' + (+a.note || 0) + ' sur 5">' + starsH(+a.note || 0) + '</div>' +
-    (meta ? '<div class="meta">' + meta + '</div>' : '') +
-    (a.titre ? '<h3>' + esc(a.titre) + '</h3>' : '') +
-    (a.plus ? '<div class="pm"><b>Ce qui a convaincu</b><p>' + esc(a.plus) + '</p></div>' : '') +
-    (a.moins ? '<div class="pm"><b>À améliorer</b><p>' + esc(a.moins) + '</p></div>' : '') +
-    '<div class="meta"><span style="color:var(--encre)">' + esc(a.nom || 'Client') + '</span>' + (a.reco === 'oui' ? '<span>Recommande Maison Ouvrage</span>' : '') + (a.publiee ? '<span class="ver">✓ Avis vérifié · publié le ' + fmtJour(a.publiee) + '</span>' : '') + '</div>' +
-    (a.reponse ? '<div class="rep"><b><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#mo"/></svg>Réponse de Maison Ouvrage</b><p>' + esc(a.reponse) + '</p></div>' : '') +
-    (admin || '') + '</article>';
-}
-
-function avRender() {
-  const L = AVP.list, n = L.length; const pb = $('#avPub'); if (pb) pb.hidden = !n;
-  $('#avFil').innerHTML = n ? [0, 5, 4, 3, 2, 1].map((k) => { const c = k ? L.filter((a) => Math.round(+a.note) === k).length : n; return '<button type="button" data-f="' + k + '" aria-pressed="' + (AVP.fil === k) + '">' + (k ? k + ' ★ · ' + c : 'Tous · ' + c) + '</button>'; }).join('') : '';
-  const V = AVP.fil ? L.filter((a) => Math.round(+a.note) === AVP.fil) : L;
-  $('#avList').innerHTML = n ? (V.length ? V.map((a) => avCard(a)).join('') : '<p class="avVide">Aucun avis avec cette note pour le moment</p>') : '<p class="avVide">Les avis de nos clients seront publiés ici, sans sélection ni retouche · vous avez mené un projet avec nous ? <a href="#laisser-un-avis">Soyez le premier à témoigner</a></p>';
-  if (AVP.seen || $('#sat').classList.contains('vu')) satFill();
-  if (document.body.dataset.route === 'avis') requestAnimationFrame(observe);
-}
-$('#avFil').addEventListener('click', (e) => { const b = e.target.closest('[data-f]'); if (!b) return; AVP.fil = +b.dataset.f; avRender(); });
-
-/* formulaire d'avis */
-const AVF = { note: 0, reco: '', crit: {} };
-function pickH(k, v, sm) { let h = ''; for (let i = 1; i <= 5; i++) h += '<button type="button" role="radio" aria-checked="' + (v === i) + '" aria-label="' + i + ' sur 5" data-n="' + i + '" data-on="' + (i <= v ? 1 : 0) + '">' + STAR + '</button>'; return h; }
-function avFormDraw() {
-  $('.pick[data-k="note"]').innerHTML = pickH('note', AVF.note);
-  $('#critF').innerHTML = CRIT.map(([k, l]) => '<div><span>' + l + '</span><div class="pick sm" data-k="' + k + '" role="radiogroup" aria-label="' + l + '">' + pickH(k, AVF.crit[k] || 0) + '</div></div>').join('');
-  $$('#avForm .opts[data-k="reco"] .opt').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === AVF.reco)));
-}
-$('#avForm').addEventListener('click', (e) => {
-  const s = e.target.closest('.pick button'); if (s) { const k = s.parentElement.dataset.k, v = +s.dataset.n; if (k === 'note') AVF.note = v; else AVF.crit[k] = v; avFormDraw(); return; }
-  const o = e.target.closest('.opts[data-k="reco"] .opt'); if (o) { AVF.reco = o.dataset.v; avFormDraw(); }
-});
-const avWait = (pr, ms) => Promise.race([pr, new Promise((r) => setTimeout(() => r(null), ms || 8000))]);
-async function avConn() {
-  if (AVP.db) return AVP.db;
-  for (let i = 0; i < 25 && !window.claude; i++) await new Promise((r) => setTimeout(r, 200));
-  if (!window.claude) return null;
-  const db = await avWait(window.claude.use('db'), 10000); if (!db) return null;
-  const us = await avWait(window.claude.use('user'), 10000);
-  AVP.uid = us ? await avWait(us.id()) : null;
-  AVP.admin = us ? !!(await avWait(us.canEdit())) : false;
-  AVP.db = db; return db;
-}
-$('#avGo').addEventListener('click', async () => {
-  const v = (id) => ($(id).value || '').trim();
-  const D = { note: AVF.note, reco: AVF.reco, crit: Object.assign({}, AVF.crit), type: v('#av-type'), date: v('#av-date'), titre: v('#av-titre'), plus: v('#av-plus'), moins: v('#av-moins'), nom: v('#av-nom'), ville: v('#av-ville') };
-  const manque = [!D.note && 'votre note globale', !D.reco && 'votre recommandation', !D.plus && 'ce qui vous a convaincu', !D.nom && 'votre prénom', !$('#av-ok').checked && 'votre accord de publication'].filter(Boolean);
-  if (manque.length) { $('#avErr').textContent = 'Merci de préciser ' + manque.join(', '); return; }
-  $('#avErr').textContent = ''; $('#avGo').disabled = true; let ok = false;
-  try { const db = await avConn(); if (db && AVP.uid) { await db.doc('avis/' + AVP.uid).set(Object.assign(D, { recue: new Date().toISOString(), statut: 'attente' })); ok = true; } } catch (er) { ok = false; }
-  $('#avGo').disabled = false;
-  $('#avOk').innerHTML = ok ? 'Merci ' + esc(D.nom) + ' : votre avis nous est parvenu, il sera publié après vérification, accompagné de notre réponse' : 'Votre avis n\'a pas pu être transmis depuis cette page · écrivez à <a href="mailto:maisonouvrage@gmail.com">maisonouvrage@gmail.com</a> et nous vous indiquerons comment le déposer';
-});
-
-/* modération : administrateurs uniquement */
-function avRepModele(a, k) {
-  const pr = String(a.nom || '').trim().split(/\s+/)[0] || '', bonjour = pr ? pr : 'à vous', lieu = a.type ? String(a.type).toLowerCase() : 'projet';
-  if (k === 'court') return 'Merci ' + bonjour + ' pour votre confiance et pour ce bel avis · toute l\'équipe Maison Ouvrage vous souhaite de profiter pleinement de votre ' + lieu;
-  if (k === 'nuance') return 'Merci ' + bonjour + ' pour votre confiance et pour ce retour sincère · vos remarques nous aident à progresser : nous les avons partagées avec l\'équipe et les artisans concernés, et nous restons à votre écoute pour en parler de vive voix · Maison Ouvrage';
-  return 'Merci infiniment ' + bonjour + ' pour votre confiance et pour ces mots qui touchent toute l\'équipe · ce fut un plaisir de vous accompagner dans ce ' + (a.type ? 'projet de ' + lieu : 'projet') + ', et nous transmettons vos remerciements aux artisans qui l\'ont réalisé · au plaisir de vous retrouver pour un prochain chantier · Maison Ouvrage';
-}
-document.addEventListener('input', (e) => { if (e.target.matches && e.target.matches('#modoList textarea[data-rep]')) { AVP.drafts = AVP.drafts || {}; AVP.drafts[e.target.dataset.rep] = e.target.value; } });
-document.addEventListener('click', (e) => { const b = e.target.closest && e.target.closest('[data-repm]'); if (!b) return; const id = b.dataset.repid, ta = $('#modoList textarea[data-rep="' + CSS.escape(id) + '"]'), src = (AVP.rows || []).find((r) => r.id === id) || {}; if (ta) { ta.value = avRepModele(src, b.dataset.repm); AVP.drafts = AVP.drafts || {}; AVP.drafts[id] = ta.value; ta.focus(); } });
-function modoRender(rows) {
-  AVP.rows = rows;
-  const pub = new Map(AVP.list.map((a) => [a.id, a]));
-  const lab = { attente: 'En attente', publie: 'Publié', ecarte: 'Écarté' };
-  rows.sort((a, b) => cmpS(b.recue, a.recue));
-  $('#modoList').innerHTML = rows.length ? rows.map((a) => {
-    const p = pub.get(a.id), st = p ? 'publie' : (a.statut === 'ecarte' ? 'ecarte' : 'attente');
-    return avCard(Object.assign({}, a, { publiee: null, reponse: null }), '<div class="meta"><span style="color:var(--bdx)">' + lab[st] + '</span><span>Reçu le ' + fmtJour(a.recue) + '</span></div>' +
-      '<div class="repM"><span>Réponse de Maison Ouvrage</span>' + [['chaleur', 'Chaleureuse'], ['court', 'Courte'], ['nuance', 'Avis nuancé']].map(([k, l]) => '<button type="button" data-repm="' + k + '" data-repid="' + esc(a.id) + '">' + l + '</button>').join('') + '</div>' +
-      '<textarea data-rep="' + esc(a.id) + '" rows="4" placeholder="Votre réponse publique">' + esc((AVP.drafts || {})[a.id] != null ? AVP.drafts[a.id] : p && p.reponse ? p.reponse : avRepModele(a, (+a.note || 0) <= 3 ? 'nuance' : 'chaleur')) + '</textarea>' +
-      '<div class="btns"><button type="button" class="btn plein" data-pub="' + esc(a.id) + '">' + (p ? 'Mettre à jour' : 'Publier tel quel') + '</button><button type="button" class="btn" data-ec="' + esc(a.id) + '">' + (p ? 'Retirer' : 'Écarter') + '</button></div>');
-  }).join('') : '<p class="muted">Aucun avis reçu pour le moment</p>';
-  $$('#modoList .rv').forEach((el) => el.classList.add('vu'));
-}
-async function modoBoot(db) {
-  $('#modo').hidden = false; let rows = [];
-  db.collection('avis').onSnapshot((s) => { rows = s.docs.map((d) => Object.assign({ id: d.id }, d.data())); AVP.modo = () => modoRender(rows.slice()); AVP.modo(); }, () => { $('#modoList').innerHTML = '<p class="muted">Lecture des avis impossible pour le moment</p>'; });
-  $('#modoList').addEventListener('click', async (e) => {
-    const b = e.target.closest('[data-pub],[data-ec]'); if (!b) return; b.disabled = true;
-    const id = b.dataset.pub || b.dataset.ec, src = rows.find((r) => r.id === id); if (!src) return;
-    try {
-      if (b.dataset.pub) {
-        const rep = ($('#modoList textarea[data-rep="' + CSS.escape(id) + '"]').value || '').trim(), prev = AVP.list.find((a) => a.id === id);
-        const body = {}; ['note', 'reco', 'crit', 'type', 'date', 'titre', 'plus', 'moins', 'nom', 'ville', 'recue'].forEach((k) => { if (src[k] !== undefined) body[k] = src[k]; });
-        await db.doc('avis_publies/' + id).set(Object.assign(body, { reponse: rep, publiee: prev && prev.publiee ? prev.publiee : new Date().toISOString() }));
-        const s2 = Object.assign({}, src); delete s2.id; s2.statut = 'publie'; await db.doc('avis/' + id).set(s2);
-      } else {
-        await db.doc('avis_publies/' + id).delete().catch(() => {});
-        const s2 = Object.assign({}, src); delete s2.id; s2.statut = 'ecarte'; await db.doc('avis/' + id).set(s2);
-      }
-    } catch (er) { b.textContent = 'Échec · réessayer'; }
-    b.disabled = false;
-  });
-}
-(async () => {
-  avFormDraw(); avRender();
-  const db = await avConn(); if (!db) return;
-  db.collection('avis_publies').orderBy('publiee', 'desc').limit(500).onSnapshot((s) => { AVP.list = s.docs.map((d) => Object.assign({ id: d.id }, d.data())); avRender(); if (AVP.modo) AVP.modo(); }, () => {});
-  if (AVP.admin) modoBoot(db);
-})();
 
 /* dossier de plans : plan d'aménagement, plan coté et élévations, dessinés depuis la géométrie même de la maquette 3D */
 const GEO = DATA.geo, PJ = {}; DATA.projets.forEach((p) => { PJ[p.id] = p; });
@@ -5443,7 +5240,7 @@ function relTexte(kind, c, p, x) {
     signature: [(p && p.type === 'mission' ? 'Vos ' : 'Votre ') + (ty || '').toLowerCase() + ' ' + (p && p.num) + ' en attente de signature', civ(c) + ',\n\nLe document ' + ty + ' ' + (p && p.num) + (p && p.objet ? ' · ' + p.objet : '') + ' vous attend dans votre espace. Vous pouvez le consulter et le signer en ligne en quelques secondes. Avez-vous des questions avant de le valider ?' + lien],
     justif: ['Vos justificatifs · ' + (x || ''), civ(c) + ',\n\nPour continuer à vous confier des chantiers en toute sérénité, pourriez-vous nous transmettre ' + (x || 'vos justificatifs') + ' ? Le dépôt se fait directement dans la rubrique Conformité de votre espace.' + lien],
     rdv: ['Rappel · notre rendez-vous du ' + (x || ''), civ(c) + ',\n\nJe vous confirme notre rendez-vous du ' + (x || '') + '. N\'hésitez pas à me prévenir en cas d\'empêchement.' + lien],
-    avis: ['Votre avis sur votre projet avec Maison Ouvrage', civ(c) + ',\n\nVotre projet est arrivé à son terme : merci pour votre confiance. Votre regard nous est précieux ; si vous avez deux minutes, vous pouvez déposer un avis, élogieux ou exigeant, sur notre site : ' + SITE_URL + '#laisser-un-avis']
+    avis: ['Votre avis sur votre projet avec Maison Ouvrage', civ(c) + ',\n\nVotre projet est arrivé à son terme : merci pour votre confiance. Votre regard nous est précieux ; si vous avez deux minutes, dites-nous simplement en réponse à ce message ce qui vous a plu et ce que nous pourrions améliorer']
   };
   const r = R[kind] || ['Maison Ouvrage', civ(c) + ','];
   return { sujet: r[0], corps: r[1] + SIGNE };
@@ -7036,9 +6833,9 @@ function ckTreso(S) {
 /* téléphone : indication « faire glisser » au-dessus des carrousels */
 for (const sel of ['#vRaisons', '#vEtapes', '#vScan', '#vFormules', '#vPros', '#partenaires', '#partenaires2', '#partenaires3', '#metiers', '#etapes', '#service3d', '.engage', '.fam']) for (const el of $$(sel)) if (!(el.previousElementSibling && el.previousElementSibling.classList.contains('glisse'))) el.insertAdjacentHTML('beforebegin', '<p class="glisse" aria-hidden="true">Faites glisser</p>');
 /* routage */
-const PAGES = ['accueil', 'vendre', 'artisans', 'collaborer', 'modelisation', 'visite', 'contact', 'avis', 'espace', 'admin', 'mentions-legales', 'confidentialite'];
+const PAGES = ['accueil', 'vendre', 'artisans', 'collaborer', 'modelisation', 'visite', 'contact', 'espace', 'admin', 'mentions-legales', 'confidentialite'];
 const TITLES = { accueil: "Maison Ouvrage · Apporteur d'affaires BTP", vendre: 'Rénover avant de vendre · Maison Ouvrage', artisans: 'L\'équipe et nos artisans · Maison Ouvrage', equipe: "L'équipe · Maison Ouvrage", collaborer: 'Travailler ensemble · Maison Ouvrage', modelisation: 'Modélisation 3D · Maison Ouvrage', visite: 'Visite 3D · Maison Ouvrage', contact: 'Contact · Maison Ouvrage', avis: 'Avis clients · Maison Ouvrage', espace: 'Mon espace · Maison Ouvrage', admin: 'Tableau de bord · Maison Ouvrage', 'mentions-legales': 'Mentions légales · Maison Ouvrage', confidentialite: 'Confidentialité · Maison Ouvrage' };
-const ALIAS = { equipe: 'artisans', fondatrice: 'artisans', 'vendre-contact': 'contact', 'contact-renovation': 'contact', 'contact-partenaire': 'contact', partenariats: 'collaborer', devis3d: 'modelisation', grille: 'collaborer', projets: 'modelisation', 'rendez-vous': 'contact', professionnels: 'collaborer', 'a-propos': 'artisans', methode: 'collaborer', 'savoir-faire': 'artisans', qualifications: 'artisans', syndics: 'accueil', zones: 'equipe', faq: 'collaborer', rejoindre: 'contact', 'laisser-un-avis': 'avis', temoignages: 'avis', satisfaction: 'avis', 'mon-espace': 'espace', compte: 'espace', connexion: 'espace', administration: 'admin', pilotage: 'admin' };
+const ALIAS = { equipe: 'artisans', fondatrice: 'artisans', 'vendre-contact': 'contact', 'contact-renovation': 'contact', 'contact-partenaire': 'contact', partenariats: 'collaborer', devis3d: 'modelisation', grille: 'collaborer', projets: 'modelisation', 'rendez-vous': 'contact', professionnels: 'collaborer', 'a-propos': 'artisans', methode: 'collaborer', 'savoir-faire': 'artisans', qualifications: 'artisans', syndics: 'accueil', zones: 'equipe', faq: 'collaborer', rejoindre: 'contact', 'laisser-un-avis': 'accueil', avis: 'accueil', temoignages: 'avis', satisfaction: 'avis', 'mon-espace': 'espace', compte: 'espace', connexion: 'espace', administration: 'admin', pilotage: 'admin' };
 let curRoute = '';
 function route() {
   let h = (location.hash || '').slice(1), r = 'accueil', anchor = null;
@@ -7879,7 +7676,7 @@ document.addEventListener('input', (e) => { if (e.target && e.target.id === 'pxm
   const ACT = {
     contact: ['Décrire mon projet', '#contact'], d3: ['Demander un devis 3D', '#modelisation'], visite: ['Voir la visite 3D', '#visite'],
     vendre: ['Rénover avant de vendre', '#vendre'], pro: ['Devenir partenaire', '#collaborer'], club: ['Le Club partenaires', '#club'], artisans: ['Nos artisans', '#artisans'],
-    espace: ['Mon espace', '#espace'], mail: ['Écrire un e-mail', 'mailto:' + MAIL], avis: ['Les avis', '#avis']
+    espace: ['Mon espace', '#espace'], mail: ['Écrire un e-mail', 'mailto:' + MAIL]
   };
   const KB = [
     { k: ['cout', 'coute', 'prix', 'tarif', 'honoraire', 'gratuit', 'payant', 'facture', 'combien', 'frais', 'cher'], q: 'Combien coûte votre accompagnement ?', a: "Rien pour vous : notre accompagnement est sans honoraires pour les particuliers et les architectes\nNous sommes rémunérés par l'entreprise retenue, sous forme de commission prévue par une convention écrite signée avant le chantier · elle ne s'ajoute pas au prix qui vous est présenté\nSeule la modélisation 3D, si vous la souhaitez, fait l'objet d'un devis", act: ['contact', 'd3'] },
@@ -7904,7 +7701,6 @@ document.addEventListener('input', (e) => { if (e.target && e.target.id === 'pxm
     { k: ['metier', 'metiers', 'corps', 'staff', 'dorure', 'marbre', 'marbrerie', 'ebenisterie', 'parquet', 'plomberie', 'electricite', 'peinture', 'ferronnerie', 'menuiserie', 'cuisine', 'salle', 'bain'], a: "Le réseau réunit seize corps d'état, de la démolition à la dorure : gros œuvre, staff et plâtrerie, menuiserie et ébénisterie, parquet, marbrerie et pierre, plomberie, électricité, ventilation, peinture décorative, ferronnerie, tapisserie\nChaque lot est confié à une entreprise qui en a fait son métier", act: ['artisans'] },
     { k: ['qui', 'fondatrice', 'jouweyria', 'equipe', 'fondee', 'histoire'], a: "Maison Ouvrage est une maison d'apport d'affaires en rénovation haut de gamme\nNous réunissons pour chaque projet les concepteurs et les artisans qui sauront l'exécuter, avec une seule interlocutrice du premier rendez-vous à la réception", act: ['artisans', 'contact'] },
     { k: ['club', 'abonnement', 'pistes', 'appels', 'offres', 'marches', 'chantiers', 'clients', 'prospection', 'leads'], a: "Le Club partenaires s'adresse aux entreprises et artisans : chaque jour, la Maison repère marchés publics, hôtels, boutiques, agences et promoteurs qui préparent des travaux, et les membres reçoivent ces pistes dans leur espace avec le contact et un message prêt à partir\nTrois formules sans engagement, admission sur dossier : Chêne 190 €, Marbre 390 €, Vermeil 690 € HT par mois", act: ['club', 'mail'] },
-    { k: ['avis', 'temoignage', 'recommandation', 'note'], a: "Les avis de nos clients sont publiés après vérification sur la page Avis", act: ['avis'] }
   ];
   const SUG = [0, 4, 2, 5, 9, 11];
   const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]+/g, ' ');
