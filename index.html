@@ -4381,6 +4381,17 @@ i.mo-fl.mo-fl-cl{background:currentColor}
           fenetreMdp(false);
         };
         bas.appendChild(w);
+        try {
+          if (typeof ESP !== "undefined" && ESP.me && ESP.me.type === "pro" && ESP.suivi && ESP.suivi.club && ESP.suivi.club.sub) {
+            var ab = document.createElement("a");
+            ab.className = "moQuit moMdpB";
+            ab.href = "https://billing.stripe.com/p/login/9B69AV8bG7ji1dD9ka5wI00";
+            ab.target = "_blank";
+            ab.rel = "noopener";
+            ab.textContent = "Mon abonnement";
+            bas.appendChild(ab);
+          }
+        } catch (x) {}
         bas.appendChild(q);
       }
     };
@@ -7947,7 +7958,8 @@ document.addEventListener('input', (e) => { if (e.target && e.target.id === 'pxm
     const bloc = '<div class="pxSt"><b>Le message en sept temps · personnalisé pour cette piste</b>' + f('acc', '1', 'Ce que nous avons relevé') + f('qui', '2', 'Qui nous sommes', 4) + f('offre', '3', 'Ce que nous proposons') + f('etapes', '4', 'Concrètement · une étape par ligne', 5) + f('atouts', '5', 'Ce qui nous distingue · un point par ligne', 5) + f('modal', '6', 'En toute transparence · rémunération') + f('appel', '7', 'La proposition concrète') + '</div>';
     h = h.replace(/<div class="pxSt">[\s\S]*?<\/div><label>Aperçu/, bloc + '<label>Aperçu'); return h.replace(/(<textarea id="pxm-b">)[^<]*/, '$1' + esc(pxAssemble(b))); }; }
 /* espace professionnel · accès réservé aux membres du Club, sauf partenariat accordé par la Maison (25/11) */
-const PAY = { essentiel: '', privilege: '', signature: '' };
+const PAY = { essentiel: 'https://buy.stripe.com/9B69AV8bG7ji1dD9ka5wI00', privilege: 'https://buy.stripe.com/6oU7sNfE8gTS1dDdAq5wI01', signature: 'https://buy.stripe.com/fZu9AV77Cavug8x8g65wI02' };
+const PORTAIL_MO = 'https://billing.stripe.com/p/login/9B69AV8bG7ji1dD9ka5wI00';
 const CAL_MO = 'https://calendly.com/maisonouvrage/echange-decouverte-maison-ouvrage';
 const accesPro = (S) => !!(S && ((S.club && CLUB[S.club.f] && (!S.club.statut || S.club.statut === 'actif')) || S.acces === 'partenariat'));
 const PW_TXT = {
@@ -7958,7 +7970,7 @@ function pwLien(k) { const u = PAY[k]; if (!u) return ''; const mail = (window.M
 function espPaywall() {
   const S = ESP.suivi || {}, st = S.club && S.club.statut, retour = /abonnement=ok/.test(location.search + location.hash), pref = (function () { try { return sessionStorage.getItem('moClub') || ''; } catch (e) { return ''; } })();
   const M = ESP.me || {}, nom = M.societe || M.nom || '';
-  const ban = retour && !st ? '<p class="pwBan ok">Paiement reçu · votre accès s\'ouvre dans quelques instants, cette page se met à jour seule</p>' : st === 'impaye' ? '<p class="pwBan">Le dernier prélèvement n\'a pas abouti · mettez à jour votre moyen de paiement pour retrouver votre accès</p>' : st === 'resilie' || st === 'suspendu' ? '<p class="pwBan">Votre abonnement est terminé · choisissez une formule pour retrouver votre accès</p>' : '';
+  const ban = retour && !st ? '<p class="pwBan ok">Paiement reçu · votre accès s\'ouvre dans quelques instants, cette page se met à jour seule</p>' : st === 'impaye' ? '<p class="pwBan">Le dernier prélèvement n\'a pas abouti · <a href="' + PORTAIL_MO + '" target="_blank" rel="noopener">mettez à jour votre moyen de paiement</a> pour retrouver votre accès</p>' : st === 'resilie' || st === 'suspendu' ? '<p class="pwBan">Votre abonnement est terminé · choisissez une formule pour retrouver votre accès</p>' : '';
   const carte = (k) => { const v = CLUB[k], t = PW_TXT[k], l = pwLien(k), on = pref ? pref === k : k === 'privilege';
     return '<article class="pwC' + (on ? ' on' : '') + '">' + (k === 'privilege' ? '<span class="pwTag">Le plus choisi</span>' : '') + '<span class="pwK">' + v.n + '</span><p class="pwPx"><b>' + v.px + ' €</b><small>par mois</small></p><p class="pwPour">' + t[0] + '</p><ul>' + t[1].map((x) => '<li>' + x + '</li>').join('') + '</ul>' +
       (l ? '<a class="btn' + (on ? ' plein' : '') + '" href="' + esc(l) + '">Choisir ' + v.n + '</a>' : '<a class="btn' + (on ? ' plein' : '') + '" href="mailto:maisonouvrage@gmail.com?subject=' + encodeURIComponent('Club partenaires · formule ' + v.n) + '&body=' + encodeURIComponent('Bonjour,\n\nJe souhaite souscrire à la formule ' + v.n + ' (' + v.px + ' € par mois).\n\nSociété : ' + nom + '\n') + '">Demander ' + v.n + '</a>') + '</article>'; };
