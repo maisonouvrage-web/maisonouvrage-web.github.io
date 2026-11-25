@@ -3654,6 +3654,10 @@ html.mnOuvert .mnB i:nth-child(3){width:22px;transform:translateY(-6.5px) rotate
   .mnCube{--s:84px}
   .mnS{grid-column:1/-1;grid-row:2}
 }
+/* lien « Retour au site » sur les écrans sans en-tête (25/11) */
+.moRet{align-self:flex-start;width:max-content;display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5E1522;text-decoration:none;padding:8px 14px 8px 12px;border:1px solid #E4DBCF;border-radius:999px;background:#FBF8F3;transition:background .3s ease,color .3s ease,border-color .3s ease}
+.moRet i.mo-fl{width:14px;height:14px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.moRet:hover{background:#5E1522;border-color:#5E1522;color:#fff}.moRet:hover i.mo-fl{background:#fff;transform:translateX(-3px)}
 /* menu principal · présentation resserrée (25/11) */
 @media (min-width:1281px){.nav{flex:1 1 auto;justify-content:center;gap:0}.nav a{font-size:10.5px;letter-spacing:.17em;padding:10px 17px}.nav a::after{left:17px;right:17px}.nav a+a::before{content:"";position:absolute;left:-2px;top:50%;width:4px;height:4px;border:1px solid var(--bdx);transform:translateY(-50%) rotate(45deg);opacity:.4}.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:8px 18px;margin-left:14px;transition:background .35s ease,color .35s ease}.nav a.navClub::before,.nav a.navClub::after{display:none}.nav a.navClub:hover,.nav a.navClub[aria-current="page"]{background:var(--bdx);color:var(--blanc)!important}}
 @media (max-width:1280px){.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:6px 13px;margin:6px 0}.nav a.navClub::after{display:none}}
@@ -4984,6 +4988,7 @@ i.mo-fl.mo-fl-cl{background:currentColor}
     box.innerHTML =
       '<div class="moId moId2" data-mode="' + (mail ? "co" : "co") + '">' +
       '<div class="moIdF">' +
+      '<a class="moRet" href="#accueil"><i class="mo-fl mo-fl-o" aria-hidden="true"></i>Retour au site</a>' +
       '<span class="moK">Maison Ouvrage</span>' +
       '<h2 class="moT">Votre espace <em>personnel</em></h2>' +
       '<p class="moSub">Votre projet, vos devis et vos documents, réunis au même endroit</p>' +
@@ -8920,7 +8925,7 @@ function espPaywall() {
   const carte = (k) => { const v = CLUB[k], t = PW_TXT[k], l = pwLien(k), on = pref ? pref === k : k === 'privilege';
     return '<article class="pwC' + (on ? ' on' : '') + '">' + (k === 'privilege' ? '<span class="pwTag">Le plus choisi</span>' : '') + '<span class="pwK">' + v.n + '</span><p class="pwPx"><b>' + v.px + ' €</b><small>par mois</small></p><p class="pwPour">' + t[0] + '</p><ul>' + t[1].map((x) => '<li>' + x + '</li>').join('') + '</ul>' +
       (l ? '<a class="btn' + (on ? ' plein' : '') + '" href="' + esc(l) + '">Choisir ' + v.n + '</a>' + (pwLien(k, 1) ? '<a class="pwAn" href="' + esc(pwLien(k, 1)) + '">ou ' + (v.px * 10).toLocaleString('fr-FR') + ' € par an · deux mois offerts</a>' : '') : '<a class="btn' + (on ? ' plein' : '') + '" href="mailto:maisonouvrage@gmail.com?subject=' + encodeURIComponent('Club partenaires · formule ' + v.n) + '&body=' + encodeURIComponent('Bonjour,\n\nJe souhaite souscrire à la formule ' + v.n + ' (' + v.px + ' € par mois).\n\nSociété : ' + nom + '\n') + '">Demander ' + v.n + '</a>') + '</article>'; };
-  $('#esp').innerHTML = '<div class="pwW">' + ban +
+  $('#esp').innerHTML = '<div class="pwW"><a class="moRet" href="#accueil"><i class="mo-fl mo-fl-o" aria-hidden="true"></i>Retour au site</a>' + ban +
     '<header class="pwH"><span class="pwK">Candidature retenue</span><h2>Choisissez <em>votre formule</em></h2><p>Votre candidature au Club partenaires a été retenue. Choisissez la formule qui vous correspond : votre accès s\'ouvre dès le paiement validé</p></header>' +
     '<div class="pwG">' + ['essentiel', 'privilege', 'signature'].map(carte).join('') + '</div>' +
     '<p class="pwNote">Chaque affaire signée grâce à Maison Ouvrage donne lieu à une commission selon le barème de la plateforme, de 13 à 5 % du montant HT · formule mensuelle sans engagement, résiliable chaque mois · formule annuelle avec deux mois offerts · paiement sécurisé par Stripe · TVA non applicable, article 293 B du CGI</p>' +
@@ -9037,7 +9042,7 @@ function espCandidature() {
       tarifs;
   }
   $("#esp").innerHTML =
-    '<div class="pwW">' +
+    '<div class="pwW"><a class="moRet" href="#accueil"><i class="mo-fl mo-fl-o" aria-hidden="true"></i>Retour au site</a>' +
     corps +
     '<aside class="pwP"><div><span class="pwK">Un projet de partenariat ?</span><b>Architecte, agence, promoteur ou maison de luxe</b><p>Les partenariats se font sur sélection. Présentez-nous votre activité : nous étudions chaque candidature et, si elle est retenue, ouvrons votre accès après un premier échange</p></div><div class="btns"><a class="btn plein" href="mailto:maisonouvrage@gmail.com?subject=' +
     encodeURIComponent(
