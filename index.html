@@ -3658,6 +3658,16 @@ html.mnOuvert .mnB i:nth-child(3){width:22px;transform:translateY(-6.5px) rotate
 .moRet{align-self:flex-start;width:max-content;display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5E1522;text-decoration:none;padding:8px 14px 8px 12px;border:1px solid #E4DBCF;border-radius:999px;background:#FBF8F3;transition:background .3s ease,color .3s ease,border-color .3s ease}
 .moRet i.mo-fl{width:14px;height:14px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
 .moRet:hover{background:#5E1522;border-color:#5E1522;color:#fff}.moRet:hover i.mo-fl{background:#fff;transform:translateX(-3px)}
+/* candidature · type de demande (25/11) */
+.cdTy{border:0;margin:0 0 6px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cdTy legend{font-size:13px;color:#3a302b;margin-bottom:8px;padding:0}
+.cdTy label{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #D9CEC0;border-radius:14px;background:#fff;cursor:pointer;transition:border-color .3s ease,box-shadow .3s ease}
+.cdTy input{margin-top:4px;accent-color:#5E1522}
+.cdTy b{display:block;font-weight:400;font-size:15px;color:#1C1613}
+.cdTy small{display:block;margin-top:3px;font-size:12px;line-height:1.45;color:#8a7d73}
+.cdTy label:has(input:checked){border-color:#5E1522;box-shadow:0 0 0 3px rgba(94,21,34,.1)}
+.cdF[data-t="part"] .cdFormule{display:none}
+@media (max-width:760px){.cdTy{grid-template-columns:1fr}}
 /* menu principal · présentation resserrée (25/11) */
 @media (min-width:1281px){.nav{flex:1 1 auto;justify-content:center;gap:0}.nav a{font-size:10.5px;letter-spacing:.17em;padding:10px 17px}.nav a::after{left:17px;right:17px}.nav a+a::before{content:"";position:absolute;left:-2px;top:50%;width:4px;height:4px;border:1px solid var(--bdx);transform:translateY(-50%) rotate(45deg);opacity:.4}.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:8px 18px;margin-left:14px;transition:background .35s ease,color .35s ease}.nav a.navClub::before,.nav a.navClub::after{display:none}.nav a.navClub:hover,.nav a.navClub[aria-current="page"]{background:var(--bdx);color:var(--blanc)!important}}
 @media (max-width:1280px){.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:6px 13px;margin:6px 0}.nav a.navClub::after{display:none}}
@@ -8985,12 +8995,12 @@ function espCandidature() {
       esc(C.metier || M.metier || "·") +
       "</b></div><div><span>Zone</span><b>" +
       esc(C.zone || "·") +
-      "</b></div><div><span>Formule envisagée</span><b>" +
-      esc(fm(C.formule)) +
+      "</b></div><div><span>Votre demande</span><b>" +
+      esc(C.type === "part" ? "Partenariat" : "Abonnement · " + fm(C.formule)) +
       "</b></div></div>" +
       tarifs;
   } else {
-    const opt = ["essentiel", "privilege", "signature", ""]
+    const opt = ["essentiel", "privilege", "signature"]
       .map(
         (k) =>
           '<option value="' +
@@ -8998,9 +9008,7 @@ function espCandidature() {
           '"' +
           ((pref || "privilege") === k ? " selected" : "") +
           ">" +
-          (k
-            ? CLUB[k].n + " · " + CLUB[k].px + " € par mois"
-            : "Je ne sais pas encore") +
+          CLUB[k].n + " · " + CLUB[k].px + " € par mois" +
           "</option>",
       )
       .join("");
@@ -9019,7 +9027,10 @@ function espCandidature() {
       "></label>";
     corps =
       '<header class="pwH"><span class="pwK">Club partenaires · admission sur sélection</span><h2>Présentez <em>votre candidature</em></h2><p>Le Club réunit des entreprises et des artisans d\'art choisis un à un. Présentez votre maison : nous étudions chaque candidature, vérifions assurances et références, puis vous répondons par e-mail</p><p class="pwSel">Aucun paiement n\'est demandé à ce stade · la formule et le paiement en ligne vous sont proposés uniquement après notre validation</p></header>' +
-      '<form class="cdF" id="cdF"><div class="cdG">' +
+      '<form class="cdF" id="cdF" data-t="abo"><fieldset class="cdTy"><legend>Votre demande *</legend>' +
+      '<label><input type="radio" name="cd-type" value="abo" checked><span><b>Rejoindre le Club avec un abonnement</b><small>Entreprise ou artisan · Chêne, Marbre ou Vermeil, après notre validation</small></span></label>' +
+      '<label><input type="radio" name="cd-type" value="part"><span><b>Proposer un partenariat</b><small>Architecte, agence, promoteur ou maison · accès offert si le partenariat est accepté</small></span></label>' +
+      '</fieldset><div class="cdG">' +
       ch("cd-soc", "Société", M.societe || M.nom, "Raison sociale", 1) +
       ch("cd-met", "Métier", M.metier, "Menuiserie, staff, marbrerie…", 1) +
       ch(
@@ -9030,7 +9041,7 @@ function espCandidature() {
         1,
       ) +
       ch("cd-siret", "SIRET", "", "14 chiffres", 1) +
-      '<label class="cdL"><span>Formule envisagée</span><select id="cd-f">' +
+      '<label class="cdL cdFormule"><span>Formule souhaitée *</span><select id="cd-f">' +
       opt +
       "</select></label>" +
       ch("cd-site", "Site ou Instagram", "", "Facultatif") +
@@ -9082,7 +9093,8 @@ document.addEventListener(
       metier: v("cd-met"),
       zone: v("cd-zone"),
       siret,
-      formule: v("cd-f"),
+      type: (document.querySelector('input[name="cd-type"]:checked') || {}).value || "abo",
+      formule: ((document.querySelector('input[name="cd-type"]:checked') || {}).value || "abo") === "part" ? "" : v("cd-f"),
       site: v("cd-site"),
       refs: v("cd-refs"),
       msg: v("cd-msg"),
@@ -9110,6 +9122,7 @@ document.addEventListener(
   },
   true,
 );
+document.addEventListener("change", (e) => { const t = e.target; if (t && t.name === "cd-type") { const f = document.getElementById("cdF"); if (f) f.dataset.t = t.value; } });
 /* atelier · admettre ou non une candidature, avant tout paiement */
 document.addEventListener(
   "click",
@@ -9129,12 +9142,19 @@ document.addEventListener(
       body = Object.assign({}, s, {
         admission: val,
         admissionLe: new Date().toISOString(),
-      });
+      }),
+      estPart = !!(c.candidature && c.candidature.type === "part");
+    if (val === "validee" && estPart) {
+      body.acces = "partenariat";
+      body.accesLe = body.admissionLe;
+    }
     const ok = await espEcrire("suivi/" + id, body);
     if (ok) ESP.M.suivi[id] = body;
     ESP.A.ok = ok
       ? nomDe(c) +
-        (val === "validee"
+        (val === "validee" && estPart
+          ? " · partenariat accepté, son accès est ouvert sans abonnement"
+          : val === "validee"
           ? " · admis, la formule et le paiement lui sont maintenant proposés dans son espace"
           : " · candidature non retenue")
       : "La modification n'a pas été enregistrée";
@@ -9144,7 +9164,9 @@ document.addEventListener(
           ? "Votre admission au Club partenaires Maison Ouvrage"
           : "Votre candidature au Club partenaires Maison Ouvrage";
       const txt =
-        val === "validee"
+        val === "validee" && estPart
+          ? "Bonjour,\n\nNous avons le plaisir de vous annoncer que votre proposition de partenariat avec Maison Ouvrage a été acceptée.\n\nVotre accès est désormais ouvert dans votre espace : https://maisonouvrage-web.github.io/#espace\n\nBien cordialement,\n\nMaison Ouvrage\nRénovation de prestige\nmaisonouvrage@gmail.com"
+          : val === "validee"
           ? "Bonjour,\n\nNous avons le plaisir de vous annoncer que votre candidature au Club partenaires Maison Ouvrage a été retenue.\n\nVotre formule et le paiement en ligne vous attendent dans votre espace : https://maisonouvrage-web.github.io/#espace\n\nBien cordialement,\n\nMaison Ouvrage\nRénovation de prestige\nmaisonouvrage@gmail.com"
           : "Bonjour,\n\nNous vous remercions pour votre candidature au Club partenaires Maison Ouvrage. Après étude attentive de votre dossier, nous ne sommes pas en mesure d'y donner une suite favorable à ce stade.\n\nNous vous souhaitons une excellente continuation.\n\nBien cordialement,\n\nMaison Ouvrage\nRénovation de prestige\nmaisonouvrage@gmail.com";
       ESP.A.mail =
@@ -9198,8 +9220,10 @@ if (window.MutationObserver)
                 [
                   "SIRET " + (C.siret || "·"),
                   "Zone " + (C.zone || "·"),
-                  "Formule " +
-                    (CLUB[C.formule] ? CLUB[C.formule].n : "à définir"),
+                  C.type === "part"
+                    ? "Demande : partenariat"
+                    : "Demande : abonnement " +
+                      (CLUB[C.formule] ? CLUB[C.formule].n : "à définir"),
                   C.site || "",
                   "Références : " + (C.refs || "·"),
                   C.msg || "",
@@ -9207,7 +9231,9 @@ if (window.MutationObserver)
                   .filter(Boolean)
                   .join("\n"),
               ) +
-              '">Candidature · ' +
+              '">' +
+              (C.type === "part" ? "Partenariat" : "Abonnement" + (CLUB[C.formule] ? " " + CLUB[C.formule].n : "")) +
+              " · " +
               esc(jourC(C.le)) +
               '</span><button type="button" class="apB plein" data-adm="' +
               esc(id) +
