@@ -1,0 +1,25 @@
+# Maison Ouvrage
+
+> Maison Ouvrage accompagne les projets de rénovation haut de gamme à Paris et en Île-de-France : elle présente des architectes d'intérieur, des designers, des artisans d'art et des entreprises tous corps d'état sélectionnés un à un, compare les devis et suit les chantiers. L'accompagnement est sans honoraires pour les particuliers et les prescripteurs : la Maison est rémunérée par les entreprises retenues, selon un barème de 13 à 5 % du montant HT des affaires signées.
+
+## Pour qui
+
+- Particuliers : rénovation d'appartement, rénovation avant la vente, modélisation et visite 3D
+- Architectes, agences, promoteurs, hôtels : consultation d'entreprises lot par lot, aucune substitution sans accord écrit, rien n'est facturé au prescripteur
+- Entreprises et artisans : Club entreprises sur sélection (Chêne 190 €, Marbre 390 €, Vermeil 690 € par mois), pistes vérifiées chaque mois
+
+## Pages
+
+- [Accueil](https://maisonouvrage-web.github.io/)
+- [Le journal de la rénovation](https://maisonouvrage-web.github.io/journal/)
+- [Rénovation d'appartement à Paris](https://maisonouvrage-web.github.io/renovation-appartement-paris/)
+- [Architecte d'intérieur à Paris](https://maisonouvrage-web.github.io/architecte-interieur-paris/)
+- [Ébéniste et staffeur à Paris](https://maisonouvrage-web.github.io/ebeniste-staffeur-paris/)
+- [Trouver des chantiers](https://maisonouvrage-web.github.io/trouver-des-chantiers/)
+- [Appartement haussmannien](https://maisonouvrage-web.github.io/renovation-appartement-haussmannien/)
+- [Rénover avant de vendre](https://maisonouvrage-web.github.io/renovation-avant-vente/)
+- [Apporteur d'affaires BTP](https://maisonouvrage-web.github.io/apporteur-affaires-btp/)
+
+## Contact
+
+maisonouvrage@gmail.com
