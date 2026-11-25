@@ -4982,34 +4982,52 @@ i.mo-fl.mo-fl-cl{background:currentColor}
     var mono = document.querySelector(".appel .mo-bg");
     mail = mail || memo("mo-dernier-mail");
     box.innerHTML =
-      '<div class="moId">' +
+      '<div class="moId moId2" data-mode="' + (mail ? "co" : "co") + '">' +
       '<div class="moIdF">' +
-      '<span class="moK">Espace client et partenaire</span>' +
-      '<h2 class="moT">Identifiez-vous <em>en un geste</em></h2>' +
-      '<p class="moSub">Votre projet, vos documents et vos échanges, au même endroit</p>' +
+      '<span class="moK">Maison Ouvrage</span>' +
+      '<h2 class="moT">Votre espace <em>personnel</em></h2>' +
+      '<p class="moSub">Votre projet, vos devis et vos documents, réunis au même endroit</p>' +
+      '<div class="moSw" role="tablist"><button type="button" role="tab" data-m="co" aria-selected="true">J\'ai déjà un accès</button><button type="button" role="tab" data-m="nv" aria-selected="false">Première visite</button><i></i></div>' +
       '<div class="moFourn" id="moFourn" hidden></div>' +
       '<form id="moLog" class="moLog" novalidate>' +
+      '<ol class="moEt"><li><b>Votre e-mail</b>saisissez-le ci-dessous</li><li><b>Le lien reçu</b>ouvrez-le depuis cet appareil</li><li><b>Votre mot de passe</b>choisissez-le, c\'est prêt</li></ol>' +
       '<div class="moFld"><label for="moMail">Adresse e-mail</label><input id="moMail" type="email" inputmode="email" autocomplete="username" autocapitalize="off" spellcheck="false" required value="' + e(mail) + '" placeholder="prenom@exemple.fr"></div>' +
-      '<div class="moFld"><div class="moLab"><label for="moPwd">Mot de passe</label><button type="button" class="moTxt" id="moOubli">Mot de passe oublié ?</button></div>' +
+      '<div class="moFld moCo"><div class="moLab"><label for="moPwd">Mot de passe</label><button type="button" class="moTxt" id="moOubli">Oublié ?</button></div>' +
       '<div class="moPw"><input id="moPwd" type="password" autocomplete="current-password" placeholder="Votre mot de passe"><button type="button" class="moVoir" id="moVoir" aria-label="Afficher le mot de passe" aria-pressed="false">Afficher</button></div></div>' +
-      '<button type="submit" class="moBtn moPlein" id="moGo">Se connecter</button>' +
-      '<button type="button" class="moBtn moLigne" id="moLien">Recevoir un lien de connexion par e-mail</button>' +
+      '<button type="submit" class="moBtn moPlein moCo" id="moGo">Se connecter</button>' +
+      '<button type="button" class="moBtn moPlein moNv" id="moLien">Recevoir mon lien d\'accès</button>' +
+      '<button type="button" class="moTxt moCo moAlt" id="moLienCo">Sans mot de passe ? Recevoir un lien de connexion</button>' +
       '<p class="moMsg" id="moMsg" role="status" aria-live="polite">' + e(msg || S.erreurRetour() || "") + "</p>" +
       "</form>" +
-      '<p class="moNote">Première visite ? Le lien par e-mail crée votre accès, vous choisirez ensuite votre mot de passe</p>' +
       "</div>" +
       '<aside class="moIdA">' +
-      '<div class="moIdAi"><span class="moK">Maison Ouvrage</span>' +
-      '<p class="moAT">Un seul accès <em>pour tout le chantier</em></p>' +
-      '<ul class="moAv"><li>Votre projet suivi en temps réel</li><li>Devis, factures et contrats signés</li><li>Un coffre pour vos papiers</li><li>Une ligne directe avec votre interlocutrice</li></ul>' +
+      '<div class="moScn" aria-hidden="true"></div>' +
+      '<div class="moIdAi"><p class="moAT">Votre projet, <em>pièce par pièce</em></p>' +
+      '<ul class="moAv"><li>Le suivi du chantier</li><li>Devis, factures, contrats</li><li>Une ligne directe avec la Maison</li></ul>' +
       '<a class="moAide" href="mailto:maisonouvrage@gmail.com">Besoin d\'aide · maisonouvrage@gmail.com</a></div>' +
       "</aside></div>";
-    if (mono) {
-      var c = mono.cloneNode(true);
-      c.setAttribute("class", "moMono");
-      c.setAttribute("aria-hidden", "true");
-      box.querySelector(".moIdA").appendChild(c);
-    }
+    (function () {
+      var root = box.querySelector(".moId2"), sw = root.querySelectorAll(".moSw [data-m]");
+      var mode = function (m) {
+        root.dataset.mode = m;
+        sw.forEach(function (b) { b.setAttribute("aria-selected", b.dataset.m === m ? "true" : "false"); });
+        var t = root.querySelector(".moT");
+        t.innerHTML = m === "nv" ? "Créez votre <em>accès</em>" : "Votre espace <em>personnel</em>";
+        var o = document.getElementById("moMsg"); if (o) { o.textContent = ""; o.classList.remove("moOk"); }
+      };
+      sw.forEach(function (b) { b.onclick = function () { mode(b.dataset.m); try { document.getElementById("moMail").focus({ preventScroll: true }); } catch (x) {} }; });
+      var scn = root.querySelector(".moScn"), essai = 0;
+      (function poser3d() {
+      var cube = document.getElementById("mnCube");
+      if (!cube) { if (essai++ < 20) setTimeout(poser3d, 150); return; }
+      if (scn && !scn.firstChild) {
+        var c = cube.cloneNode(true); c.removeAttribute("id"); c.dataset.f = "2"; scn.appendChild(c);
+        var ry = -34, f = 0;
+        var tour = function () { if (!document.body.contains(c)) return; ry += 0.12; c.style.transform = "rotateX(-20deg) rotateY(" + ry + "deg)"; f++; if (f % 240 === 0) c.dataset.f = String((Number(c.dataset.f) + 1) % 6); requestAnimationFrame(tour); };
+        requestAnimationFrame(tour);
+      }
+      })();
+    })();
     var out = document.getElementById("moMsg");
     var dire = function (t, ok) { out.textContent = t; out.classList.toggle("moOk", !!ok); };
     function mailOk() {
@@ -5050,6 +5068,8 @@ i.mo-fl.mo-fl-cl{background:currentColor}
     });
     document.getElementById("moLog").onsubmit = async function (ev) {
       ev.preventDefault();
+      var r2 = document.querySelector(".moId2");
+      if (r2 && r2.dataset.mode === "nv") { document.getElementById("moLien").click(); return; }
       var m = mailOk();
       if (!m) return;
       var p = pw.value;
@@ -5081,6 +5101,7 @@ i.mo-fl.mo-fl-cl{background:currentColor}
       if (err) dire(/rate|seconds|many/i.test(err) ? "Un lien vient déjà d'être envoyé · patientez une minute avant d'en redemander un" : "Le lien n'a pas pu être envoyé · réessayez dans quelques minutes");
       else dire("Lien envoyé à " + m + " · ouvrez-le depuis cet appareil", true);
     };
+    document.getElementById("moLienCo").onclick = function () { document.getElementById("moLien").click(); };
     document.getElementById("moOubli").onclick = async function () {
       var m = mailOk();
       if (!m) { dire("Saisissez d'abord votre adresse e-mail, puis cliquez à nouveau sur « Mot de passe oublié ? »"); return; }
@@ -5297,6 +5318,38 @@ i.mo-fl.mo-fl-cl{background:currentColor}
   st.textContent =
     ".moLog{margin-top:22px;max-width:420px}.moLog .fld{display:flex;flex-direction:column;gap:6px}.moLog input{font:inherit;padding:12px 14px;border:1px solid var(--fil,#d9cfc3);border-radius:10px;background:#fff}.moLog .fld+.fld{margin-top:12px}.moOu{margin:16px 0 0;font-size:13px;color:#6b5f57}.moLien{font:inherit;font-size:13px;background:none;border:0;padding:0;color:#5E1522;text-decoration:underline;cursor:pointer}.moOut{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:10px;align-items:center;background:#FBF8F3;border:1px solid #d9cfc3;border-radius:999px;padding:6px 8px 6px 14px;font-size:13px;color:#1C1613;box-shadow:0 6px 20px rgba(28,22,19,.08)}.moOut a{font-size:12px;color:#FBF8F3;background:#5E1522;border-radius:999px;padding:5px 12px;text-decoration:none}.moOut a[hidden]{display:none}.moOut button{font:inherit;font-size:12px;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px;padding:5px 10px;cursor:pointer}.moOut[hidden]{display:none}.moQuit{font:inherit;font-size:13px;background:none;border:0;padding:0;margin-top:4px;color:inherit;opacity:.8;text-decoration:underline;cursor:pointer}@media(max-width:600px){.moOut span{display:none}}.moCpt{display:none}@media(max-width:600px){.moOut{left:12px;bottom:14px;gap:5px;padding:5px;flex-wrap:nowrap;max-width:calc(100% - 96px)}.moOut a,.moOut button{font-size:12.5px!important;line-height:1.2!important;min-height:0!important;height:32px;padding:0 12px!important;display:inline-flex;align-items:center;white-space:nowrap}.moOut .moCpt{display:inline-flex;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px}.moOut>button:not(.moCpt){display:none}.moOut.ouvert>button:not(.moCpt){display:inline-flex;position:absolute;right:0;background:#FBF8F3;box-shadow:0 8px 22px rgba(28,22,19,.14)}.moOut.ouvert>button:not(.moCpt):first-of-type{bottom:84px}.moOut.ouvert>.moMdpO{bottom:46px}}.moMdpB{display:block}.moMdpF{position:fixed;inset:0;z-index:90;background:rgba(28,22,19,.42);display:flex;align-items:center;justify-content:center;padding:16px}.moMdpC{background:#FBF8F3;border:1px solid #d9cfc3;border-radius:16px;padding:26px 24px 22px;width:min(420px,100%);box-shadow:0 18px 50px rgba(28,22,19,.25)}.moMdpC .k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5E1522}.moMdpC .h-l{margin:6px 0 6px}.moMdpC .muted{margin:0 0 14px;font-size:14px}.moMdpC .fld{display:flex;flex-direction:column;gap:6px}.moMdpC .fld+.fld{margin-top:10px}.moMdpC input{font:inherit;padding:11px 13px;border:1px solid #d9cfc3;border-radius:10px;background:#fff}.moMdpC #moMdpM{min-height:18px;margin:10px 0 4px;font-size:13px;color:#5E1522}.moMdpC .btns{display:flex;gap:10px;flex-wrap:wrap}.moId{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);max-width:980px;margin:clamp(16px,4vw,56px) auto;background:#FBF8F3;border:1px solid #e4dbcf;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -28px rgba(28,22,19,.28)}.moIdF{padding:clamp(28px,4.4vw,56px);display:flex;flex-direction:column}.moK{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5E1522}.moT{font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.12;margin:12px 0 8px;color:#1C1613}.moT em,.moAT em{color:#5E1522}.moSub{margin:0 0 26px;color:#6b5f57;font-size:15px;line-height:1.5}.moFourn{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}.moFourn[hidden]{display:none}.moSep{display:flex;align-items:center;gap:14px;margin:12px 0 6px;color:#8a7d73;font-size:12.5px}.moSep:before,.moSep:after{content:'';flex:1;height:1px;background:#e4dbcf}.moLog{display:flex;flex-direction:column;gap:14px;margin:0}.moFld{display:flex;flex-direction:column;gap:7px}.moFld label{font-size:13px;color:#1C1613;letter-spacing:.01em}.moLab{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.moFld input{font:inherit;font-size:16px;height:50px;box-sizing:border-box;width:100%;padding:0 15px;border:1px solid #d9cfc3;border-radius:12px;background:#fff;color:#1C1613;transition:border-color .15s,box-shadow .15s}.moFld input:focus{outline:none;border-color:#5E1522;box-shadow:0 0 0 3px rgba(94,21,34,.12)}.moPw{position:relative}.moPw input{padding-right:92px}.moVoir{position:absolute;right:6px;top:6px;bottom:6px;font:inherit;font-size:12.5px;padding:0 12px;border:0;border-radius:9px;background:#F3EDE4;color:#5E1522;cursor:pointer}.moTxt{font:inherit;font-size:12.5px;background:none;border:0;padding:0;color:#5E1522;cursor:pointer;text-decoration:underline;text-underline-offset:3px}.moBtn{font:inherit;font-size:15px;height:50px;width:100%;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .15s,border-color .15s,opacity .15s}.moBtn:disabled{opacity:.6;cursor:progress}.moPlein{margin-top:6px;background:#5E1522;color:#FBF8F3;border:1px solid #5E1522}.moPlein:hover{background:#4a101b}.moLigne{background:transparent;color:#1C1613;border:1px solid #d9cfc3;font-size:14px}.moLigne:hover{border-color:#5E1522}.moSoc{background:#fff;color:#1C1613;border:1px solid #d9cfc3}.moSoc:hover{border-color:#1C1613}.moSoc svg{width:19px;height:19px;flex:none}.moMsg{min-height:20px;margin:0;font-size:13.5px;line-height:1.45;color:#5E1522}.moMsg.moOk{color:#2f5d3a}.moMsg:empty{min-height:0}.moNote{margin:18px 0 0;font-size:12.5px;line-height:1.5;color:#8a7d73}.moIdA{position:relative;overflow:hidden;background:#F3EDE4;border-left:1px solid #e4dbcf;display:flex}.moIdAi{position:relative;z-index:1;padding:clamp(28px,4.4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:16px}.moAT{font-size:clamp(21px,2vw,26px);line-height:1.2;margin:0;color:#1C1613}.moAv{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column}.moAv li{position:relative;padding:11px 0 11px 22px;border-top:1px solid rgba(28,22,19,.1);font-size:14.5px;color:#3a302b}.moAv li:last-child{border-bottom:1px solid rgba(28,22,19,.1)}.moAv li:before{content:'';position:absolute;left:2px;top:18px;width:7px;height:7px;border:1px solid #5E1522;transform:rotate(45deg)}.moAide{font-size:13px;color:#5E1522;text-decoration:none;border-bottom:1px solid rgba(94,21,34,.35);align-self:flex-start;padding-bottom:2px;margin-top:4px}.moMono{position:absolute;right:-60px;bottom:-70px;width:320px;height:auto;opacity:.13;pointer-events:none}@media(max-width:820px){.moId{grid-template-columns:1fr;margin:12px auto;border-radius:18px}.moIdA{border-left:0;border-top:1px solid #e4dbcf}.moMono{width:220px;right:-70px;top:-40px;bottom:auto;opacity:.09}}@media(max-width:600px){.moIdF{padding:24px 20px 22px}.moIdAi{padding:22px 20px;gap:12px}.moT{font-size:24px}.moSub{margin-bottom:20px;font-size:14px}.moAv li{padding:8px 0 8px 20px;font-size:13.5px}.moAv li:before{top:14px}.moAT{font-size:19px}}";
   document.head.appendChild(st);
+  var st2 = document.createElement("style");
+  st2.textContent = [
+    ".moId2{position:relative;overflow:hidden}",
+    ".moId2 .moIdF{animation:moIn .8s cubic-bezier(.2,.8,.2,1) both}",
+    "@keyframes moIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}",
+    ".moId2 .moT{margin-top:6px}",
+    ".moSw{position:relative;display:grid;grid-template-columns:1fr 1fr;margin:22px 0 18px;padding:4px;border:1px solid #E4DBCF;border-radius:999px;background:#F3EDE4;max-width:420px}",
+    ".moSw button{position:relative;z-index:1;font:inherit;font-size:13.5px;padding:10px 12px;border:0;background:none;color:#6b5f57;cursor:pointer;border-radius:999px;transition:color .4s ease}",
+    ".moSw button[aria-selected=true]{color:#fff}",
+    ".moSw i{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:#5E1522;box-shadow:0 8px 18px -10px rgba(94,21,34,.8);transition:transform .55s cubic-bezier(.2,.9,.2,1)}",
+    ".moId2[data-mode=nv] .moSw i{transform:translateX(100%)}",
+    ".moId2[data-mode=co] .moNv,.moId2[data-mode=nv] .moCo,.moId2[data-mode=co] .moEt{display:none!important}",
+    ".moEt{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:420px;counter-reset:e}",
+    ".moEt li{counter-increment:e;position:relative;padding:30px 10px 10px;border:1px solid #E4DBCF;border-radius:14px;background:#fff;font-size:11.5px;line-height:1.35;color:#8a7d73;animation:moIn .6s cubic-bezier(.2,.8,.2,1) both}",
+    ".moEt li:nth-child(2){animation-delay:.08s}.moEt li:nth-child(3){animation-delay:.16s}",
+    ".moEt li:before{content:counter(e);position:absolute;top:8px;left:10px;width:18px;height:18px;border-radius:50%;background:#5E1522;color:#fff;font-size:10.5px;display:flex;align-items:center;justify-content:center}",
+    ".moEt b{display:block;font-weight:400;font-size:13px;color:#1C1613;margin-bottom:2px}",
+    ".moAlt{display:block;margin:12px auto 0;font-size:12.5px}",
+    ".moId2 .moIdA{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;text-align:center}",
+    ".moId2 .moMono{display:none}",
+    ".moScn{perspective:1000px;padding:20px 0 34px}",
+    ".moScn .mnCube{--s:min(18vw,210px)}",
+    ".moId2 .moAT{font-size:clamp(20px,2vw,26px)}",
+    ".moId2 .moAv{display:flex;flex-direction:column;align-items:center}",
+    ".moId2 .moAv{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:8px;margin:14px 0 0;padding:0}",
+    ".moId2 .moAv li{border:1px solid #E4DBCF;border-radius:999px;padding:6px 12px;font-size:12.5px;background:#FBF8F3;list-style:none}",
+    ".moId2 .moAv li:before{display:none!important}",
+    ".moId2 .moAide{align-self:center;margin-top:18px}",
+    ".moId2 .moIdAi{display:flex;flex-direction:column;align-items:center}",
+    "@media (max-width:860px){.moScn{padding:10px 0 24px}.moScn .mnCube{--s:120px}.moEt li{padding:28px 8px 8px;font-size:11px}}",
+  ].join("");
+  document.head.appendChild(st2);
 })();
 
 document.documentElement.classList.add('js');
