@@ -4068,47 +4068,75 @@ body.iaOn .iaFab{display:none}
       '<div class="espPl idf"><div class="cote" aria-hidden="true"><span>Identification</span></div>' +
       '<div class="idfG"><div class="idfL"><span class="k">Accéder à mon espace</span><h2 class="h-l">Identifiez-vous <span class="it">en un geste</span></h2>' +
       '<form id="moLog" class="moLog" novalidate>' +
-      '<div class="fld"><label for="moMail">Adresse e-mail</label><input id="moMail" type="email" autocomplete="username" required value="' + e(mail || "") + '" placeholder="prenom@exemple.fr"></div>' +
+      '<div class="fld"><label for="moMail">Adresse e-mail</label><input id="moMail" type="email" autocomplete="username" required value="' +
+      e(mail || "") +
+      '" placeholder="prenom@exemple.fr"></div>' +
       '<div class="fld"><label for="moPwd">Mot de passe</label><input id="moPwd" type="password" autocomplete="current-password" placeholder="Votre mot de passe"></div>' +
       '<div class="btns"><button type="submit" class="btn plein" id="moGo">Se connecter</button></div>' +
       '<p class="moOu"><span>Pas encore de mot de passe ?</span> <button type="button" class="moLien" id="moLien">Recevoir un lien de connexion par e-mail</button></p>' +
-      '<p class="muted petit" id="moMsg" aria-live="polite">' + (msg || "") + "</p></form></div>" +
-      '<div class="idfR">' + (typeof espAvantages === "function" ? espAvantages() : "") +
+      '<p class="muted petit" id="moMsg" aria-live="polite">' +
+      (msg || "") +
+      "</p></form></div>" +
+      '<div class="idfR">' +
+      (typeof espAvantages === "function" ? espAvantages() : "") +
       '<div class="btns"><a class="btn" href="mailto:maisonouvrage@gmail.com">Besoin d\'aide · nous écrire</a></div></div></div></div>';
     var out = document.getElementById("moMsg");
     function mailOk() {
       var m = document.getElementById("moMail").value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(m)) { out.textContent = "Vérifiez l'adresse e-mail saisie"; return ""; }
+      if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(m)) {
+        out.textContent = "Vérifiez l'adresse e-mail saisie";
+        return "";
+      }
       return m;
     }
     document.getElementById("moLog").onsubmit = async function (ev) {
       ev.preventDefault();
-      var m = mailOk(); if (!m) return;
+      var m = mailOk();
+      if (!m) return;
       var p = document.getElementById("moPwd").value;
-      if (!p) { out.textContent = "Saisissez votre mot de passe, ou recevez un lien de connexion par e-mail"; return; }
-      var b = document.getElementById("moGo"); b.disabled = true; out.textContent = "Connexion…";
+      if (!p) {
+        out.textContent =
+          "Saisissez votre mot de passe, ou recevez un lien de connexion par e-mail";
+        return;
+      }
+      var b = document.getElementById("moGo");
+      b.disabled = true;
+      out.textContent = "Connexion…";
       var err = await S.mdp(m, p);
       b.disabled = false;
-      if (err) { out.textContent = /invalid/i.test(err) ? "Adresse ou mot de passe incorrect" : /confirm/i.test(err) ? "Adresse pas encore confirmée · utilisez le lien de connexion par e-mail" : "La connexion n'a pas abouti · réessayez dans un instant"; return; }
+      if (err) {
+        out.textContent = /invalid/i.test(err)
+          ? "Adresse ou mot de passe incorrect"
+          : /confirm/i.test(err)
+            ? "Adresse pas encore confirmée · utilisez le lien de connexion par e-mail"
+            : "La connexion n'a pas abouti · réessayez dans un instant";
+        return;
+      }
       out.textContent = "Connexion réussie…";
       var a = await S.admin();
       location.hash = a ? "admin" : "espace";
       location.reload();
     };
     document.getElementById("moLien").onclick = async function () {
-      var m = mailOk(); if (!m) return;
+      var m = mailOk();
+      if (!m) return;
       out.textContent = "Envoi du lien…";
       var err = await S.lien(m);
       out.innerHTML = err
         ? 'Le lien n\'a pas pu être envoyé · réessayez dans quelques minutes ou écrivez à <a href="mailto:maisonouvrage@gmail.com">maisonouvrage@gmail.com</a>'
-        : "Un lien de connexion vient de vous être envoyé à <b>" + e(m) + "</b> · ouvrez-le depuis cet appareil";
+        : "Un lien de connexion vient de vous être envoyé à <b>" +
+          e(m) +
+          "</b> · ouvrez-le depuis cet appareil";
     };
   }
   var boot0 = espBoot;
   espBoot = async function () {
     await S.ready;
     if (!S.reel()) {
-      if ((location.hash || "").indexOf("#admin") === 0) { location.hash = "espace"; return; }
+      if ((location.hash || "").indexOf("#admin") === 0) {
+        location.hash = "espace";
+        return;
+      }
       carte();
       var a = document.getElementById("admOffT");
       if (a)
@@ -4117,7 +4145,9 @@ body.iaOn .iaFab{display:none}
       return;
     }
     pastille();
-    try { await S.sb.rpc("rattacher"); } catch (e) {}
+    try {
+      await S.sb.rpc("rattacher");
+    } catch (e) {}
     return boot0.apply(this, arguments);
   };
   function pastille() {
@@ -4126,36 +4156,156 @@ body.iaOn .iaFab{display:none}
     d.id = "moOut";
     d.className = "moOut";
     d.innerHTML =
-      "<span>" + e(S.email()) + "</span>" +
+      "<span>" +
+      e(S.email()) +
+      "</span>" +
       '<a class="moAt" href="#admin" hidden>Mon atelier</a>' +
       '<a class="moEs" href="#espace">Mon espace</a>' +
-      '<button type="button">Se déconnecter</button>';
+      '<button type="button">Se déconnecter</button>' +
+      '<button type="button" class="moMdpO" title="Mon mot de passe" aria-label="Mon mot de passe">Mot de passe</button>';
     d.querySelector("button").onclick = S.quitter;
+    d.querySelector(".moMdpO").onclick = function () { fenetreMdp(false); };
     document.body.appendChild(d);
     var adm = false;
     var maj = function () {
       var h = (location.hash || "").replace("#", "");
-      var at = d.querySelector(".moAt"), es = d.querySelector(".moEs");
+      var at = d.querySelector(".moAt"),
+        es = d.querySelector(".moEs");
       at.hidden = !adm || h.indexOf("admin") === 0;
       d.hidden = h.indexOf("espace") === 0 && innerWidth > 900;
-      es.hidden = h.indexOf("espace") === 0 || (adm && h.indexOf("admin") !== 0 && false);
+      es.hidden =
+        h.indexOf("espace") === 0 || (adm && h.indexOf("admin") !== 0 && false);
     };
-    S.admin().then(function (a) { adm = !!a; maj(); });
+    S.admin().then(function (a) {
+      adm = !!a;
+      maj();
+    });
     maj();
     addEventListener("hashchange", maj);
     addEventListener("resize", maj);
   }
-  S.ready.then(function () { if (S.reel()) { pastille(); sortieEspace(); } });
-  function sortieEspace() {
-    var esp = document.getElementById("esp"); if (!esp || !window.MutationObserver) return;
-    var poser = function () {
-      var bas = esp.querySelector(".rBas"); if (bas && !bas.querySelector(".moQuit")) { var q = document.createElement("button"); q.type = "button"; q.className = "moQuit"; q.textContent = "Se déconnecter"; q.onclick = S.quitter; bas.appendChild(q); }
+  S.ready.then(function () {
+    if (S.reel()) {
+      pastille();
+      sortieEspace();
+      proposerMdp();
+    }
+  });
+  /* mot de passe choisi par la personne elle-même, depuis le site */
+  function fenetreMdp(premiere) {
+    if (document.getElementById("moMdpF")) return;
+    var f = document.createElement("div");
+    f.id = "moMdpF";
+    f.className = "moMdpF";
+    f.innerHTML =
+      '<form class="moMdpC" novalidate role="dialog" aria-modal="true" aria-labelledby="moMdpT">' +
+      '<span class="k">Mon compte</span><h2 class="h-l" id="moMdpT">' +
+      (premiere
+        ? 'Choisissez <span class="it">votre mot de passe</span>'
+        : 'Changer <span class="it">de mot de passe</span>') +
+      "</h2>" +
+      '<p class="muted">' +
+      (premiere
+        ? "Vous vous connecterez ensuite directement, sans lien par e-mail"
+        : "Huit caractères au moins") +
+      "</p>" +
+      '<div class="fld"><label for="moN1">Nouveau mot de passe</label><input id="moN1" type="password" autocomplete="new-password" minlength="8" required></div>' +
+      '<div class="fld"><label for="moN2">Confirmer</label><input id="moN2" type="password" autocomplete="new-password" minlength="8" required></div>' +
+      '<p class="petit" id="moMdpM" aria-live="polite"></p>' +
+      '<div class="btns"><button type="submit" class="btn plein">Enregistrer</button><button type="button" class="btn" id="moMdpX">' +
+      (premiere ? "Plus tard" : "Annuler") +
+      "</button></div></form>";
+    document.body.appendChild(f);
+    var m = f.querySelector("#moMdpM");
+    var fermer = function () {
+      f.remove();
     };
-    poser(); new MutationObserver(poser).observe(esp, { childList: true, subtree: true });
+    f.querySelector("#moMdpX").onclick = function () {
+      if (premiere)
+        try {
+          sessionStorage.setItem("moMdpPlusTard", "1");
+        } catch (e) {}
+      fermer();
+    };
+    f.addEventListener("click", function (ev) {
+      if (ev.target === f) fermer();
+    });
+    f.querySelector("#moN1").focus();
+    f.querySelector("form").onsubmit = async function (ev) {
+      ev.preventDefault();
+      var a = f.querySelector("#moN1").value,
+        b = f.querySelector("#moN2").value;
+      if (a.length < 8) {
+        m.textContent = "Huit caractères au moins";
+        return;
+      }
+      if (a !== b) {
+        m.textContent = "Les deux saisies ne correspondent pas";
+        return;
+      }
+      m.textContent = "Enregistrement…";
+      var r = await S.sb.auth.updateUser({
+        password: a,
+        data: { mdp_defini: true },
+      });
+      if (r.error) {
+        m.textContent = /different|same/i.test(r.error.message)
+          ? "Choisissez un mot de passe différent de l'actuel"
+          : /weak|short|least/i.test(r.error.message)
+            ? "Mot de passe trop faible · ajoutez lettres, chiffres et signes"
+            : /reauth|nonce/i.test(r.error.message)
+              ? "Pour des raisons de sécurité, reconnectez-vous par lien e-mail puis recommencez"
+              : "L'enregistrement n'a pas abouti · réessayez dans un instant";
+        return;
+      }
+      m.textContent =
+        "Mot de passe enregistré · vous pourrez vous connecter avec votre e-mail et ce mot de passe";
+      setTimeout(fermer, 1800);
+    };
+  }
+  async function proposerMdp() {
+    try {
+      var u = (await S.sb.auth.getUser()).data.user;
+      if (!u || u.is_anonymous) return;
+      if (u.user_metadata && u.user_metadata.mdp_defini) return;
+      if (sessionStorage.getItem("moMdpPlusTard")) return;
+      fenetreMdp(true);
+    } catch (e) {}
+  }
+  window.moMdp = function () {
+    fenetreMdp(false);
+  };
+  function sortieEspace() {
+    var esp = document.getElementById("esp");
+    if (!esp || !window.MutationObserver) return;
+    var poser = function () {
+      var bas = esp.querySelector(".rBas");
+      if (bas && !bas.querySelector(".moQuit")) {
+        var q = document.createElement("button");
+        q.type = "button";
+        q.className = "moQuit";
+        q.textContent = "Se déconnecter";
+        q.onclick = S.quitter;
+        var w = document.createElement("button");
+        w.type = "button";
+        w.className = "moQuit moMdpB";
+        w.textContent = "Mon mot de passe";
+        w.onclick = function () {
+          fenetreMdp(false);
+        };
+        bas.appendChild(w);
+        bas.appendChild(q);
+      }
+    };
+    poser();
+    new MutationObserver(poser).observe(esp, {
+      childList: true,
+      subtree: true,
+    });
   }
   var st = document.createElement("style");
   st.textContent =
-    ".moLog{margin-top:22px;max-width:420px}.moLog .fld{display:flex;flex-direction:column;gap:6px}.moLog input{font:inherit;padding:12px 14px;border:1px solid var(--fil,#d9cfc3);border-radius:10px;background:#fff}.moLog .fld+.fld{margin-top:12px}.moOu{margin:16px 0 0;font-size:13px;color:#6b5f57}.moLien{font:inherit;font-size:13px;background:none;border:0;padding:0;color:#5E1522;text-decoration:underline;cursor:pointer}.moOut{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:10px;align-items:center;background:#FBF8F3;border:1px solid #d9cfc3;border-radius:999px;padding:6px 8px 6px 14px;font-size:13px;color:#1C1613;box-shadow:0 6px 20px rgba(28,22,19,.08)}.moOut a{font-size:12px;color:#FBF8F3;background:#5E1522;border-radius:999px;padding:5px 12px;text-decoration:none}.moOut a[hidden]{display:none}.moOut button{font:inherit;font-size:12px;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px;padding:5px 10px;cursor:pointer}.moOut[hidden]{display:none}.moQuit{font:inherit;font-size:13px;background:none;border:0;padding:0;margin-top:4px;color:inherit;opacity:.8;text-decoration:underline;cursor:pointer}@media(max-width:600px){.moOut span{display:none}}";
+    ".moLog{margin-top:22px;max-width:420px}.moLog .fld{display:flex;flex-direction:column;gap:6px}.moLog input{font:inherit;padding:12px 14px;border:1px solid var(--fil,#d9cfc3);border-radius:10px;background:#fff}.moLog .fld+.fld{margin-top:12px}.moOu{margin:16px 0 0;font-size:13px;color:#6b5f57}.moLien{font:inherit;font-size:13px;background:none;border:0;padding:0;color:#5E1522;text-decoration:underline;cursor:pointer}.moOut{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:10px;align-items:center;background:#FBF8F3;border:1px solid #d9cfc3;border-radius:999px;padding:6px 8px 6px 14px;font-size:13px;color:#1C1613;box-shadow:0 6px 20px rgba(28,22,19,.08)}.moOut a{font-size:12px;color:#FBF8F3;background:#5E1522;border-radius:999px;padding:5px 12px;text-decoration:none}.moOut a[hidden]{display:none}.moOut button{font:inherit;font-size:12px;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px;padding:5px 10px;cursor:pointer}.moOut[hidden]{display:none}.moQuit{font:inherit;font-size:13px;background:none;border:0;padding:0;margin-top:4px;color:inherit;opacity:.8;text-decoration:underline;cursor:pointer}@media(max-width:600px){.moOut span{display:none}}.moMdpB{display:block}.moMdpF{position:fixed;inset:0;z-index:90;background:rgba(28,22,19,.42);display:flex;align-items:center;justify-content:center;padding:16px}.moMdpC{background:#FBF8F3;border:1px solid #d9cfc3;border-radius:16px;padding:26px 24px 22px;width:min(420px,100%);box-shadow:0 18px 50px rgba(28,22,19,.25)}.moMdpC .k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5E1522}.moMdpC .h-l{margin:6px 0 6px}.moMdpC .muted{margin:0 0 14px;font-size:14px}.moMdpC .fld{display:flex;flex-direction:column;gap:6px}.moMdpC .fld+.fld{margin-top:10px}.moMdpC input{font:inherit;padding:11px 13px;border:1px solid #d9cfc3;border-radius:10px;background:#fff}.moMdpC #moMdpM{min-height:18px;margin:10px 0 4px;font-size:13px;color:#5E1522}.moMdpC .btns{display:flex;gap:10px;flex-wrap:wrap}";
   document.head.appendChild(st);
 })();
 
