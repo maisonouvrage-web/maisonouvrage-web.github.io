@@ -2833,7 +2833,7 @@ body.iaOn .iaFab{display:none}
 .clHP{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.clHP li{border:1px solid rgba(255,253,250,.25);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}.clHP li.on{background:var(--blanc);color:var(--bdx);border-color:var(--blanc)}.clHP span{font-size:12px;opacity:.8}.clHP b{font-weight:400;font-size:22px}
 .clHome .clHN{font-size:12.5px;margin:0;opacity:.8}
 .navClub{color:var(--bdx)!important}
-/* menu principal · trois barres et volet 3D (25/11) */
+/* menu principal · trois barres, volet du haut et salon en 3D (25/11) */
 #hdr #nav {
   display: none !important;
 }
@@ -2867,22 +2867,20 @@ body.iaOn .iaFab{display:none}
   gap: 5px;
   padding: 0 9px;
   border-radius: 50%;
-  transition: background 0.3s ease;
 }
 .mnB i {
   display: block;
   height: 1.5px;
   width: 24px;
-  background: var(--encre);
+  background: #1c1613;
   border-radius: 2px;
   transition:
     width 0.45s cubic-bezier(0.7, 0, 0.2, 1),
-    background 0.3s ease,
     transform 0.45s cubic-bezier(0.7, 0, 0.2, 1);
 }
 .mnB i:nth-child(2) {
   width: 15px;
-  background: var(--bdx);
+  background: #5e1522;
 }
 .mnB i:nth-child(3) {
   width: 20px;
@@ -2895,75 +2893,124 @@ body.iaOn .iaFab{display:none}
   transform: translateX(-3px);
 }
 .mnB:focus-visible {
-  outline: 1px solid var(--bdx);
+  outline: 1px solid #5e1522;
   outline-offset: 2px;
 }
 html.mnOuvert {
   overflow: hidden;
 }
-.mnO {
+.mnV {
   position: fixed;
   inset: 0;
+  z-index: 79;
+  background: rgba(28, 22, 19, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+.mnV.on {
+  opacity: 1;
+}
+.mnO {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   z-index: 80;
-  background: #1c1613;
-  color: #f3ede4;
-  clip-path: circle(0px at var(--cx, 95%) var(--cy, 30px));
-  transition: clip-path 0.75s cubic-bezier(0.7, 0, 0.2, 1);
+  max-height: 92vh;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  background: #1c1613;
+  color: #f3ede4;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 50px 90px -40px rgba(0, 0, 0, 0.75);
+  transform-origin: 50% 0;
+  transform: perspective(1600px) rotateX(-78deg);
+  opacity: 0;
+  transition:
+    transform 0.9s cubic-bezier(0.16, 0.9, 0.24, 1),
+    opacity 0.45s ease;
 }
 .mnO.on {
-  clip-path: circle(150% at var(--cx, 95%) var(--cy, 30px));
+  transform: none;
+  opacity: 1;
 }
 .mnO::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
+  border-radius: inherit;
   background:
-    radial-gradient(
-      60% 70% at 78% 45%,
-      rgba(94, 21, 34, 0.55),
-      transparent 70%
-    ),
+    radial-gradient(55% 80% at 80% 55%, rgba(94, 21, 34, 0.6), transparent 70%),
     repeating-linear-gradient(
       90deg,
-      rgba(243, 237, 228, 0.035) 0 1px,
-      transparent 1px 80px
+      rgba(243, 237, 228, 0.04) 0 1px,
+      transparent 1px 64px
     ),
     repeating-linear-gradient(
       0deg,
-      rgba(243, 237, 228, 0.035) 0 1px,
-      transparent 1px 80px
+      rgba(243, 237, 228, 0.04) 0 1px,
+      transparent 1px 64px
     );
+}
+.mnO::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(243, 237, 228, 0.55),
+    transparent
+  );
 }
 .mnIn {
   position: relative;
-  min-height: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
-  gap: 0 clamp(24px, 5vw, 80px);
+  gap: 0 clamp(24px, 4vw, 64px);
   width: min(1240px, 100% - 48px);
   margin: 0 auto;
-  padding: clamp(18px, 3vw, 30px) 0 clamp(24px, 4vw, 44px);
+  padding: 16px 0 26px;
 }
 .mnTop {
   grid-column: 1/-1;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(243, 237, 228, 0.12);
 }
 .mnMarque {
-  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
   letter-spacing: 0.02em;
 }
 .mnMarque i {
   color: #c98b95;
 }
+.mnMarque svg {
+  color: #f3ede4;
+}
+.mnK {
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(243, 237, 228, 0.5);
+}
 .mnX {
-  width: 48px;
-  height: 48px;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(243, 237, 228, 0.25);
   background: transparent;
@@ -2971,12 +3018,13 @@ html.mnOuvert {
   position: relative;
   transition:
     background 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .mnX i {
   position: absolute;
-  left: 14px;
-  right: 14px;
+  left: 13px;
+  right: 13px;
   top: 50%;
   height: 1.5px;
   background: #f3ede4;
@@ -2990,67 +3038,66 @@ html.mnOuvert {
 .mnX:hover {
   background: #5e1522;
   border-color: #5e1522;
+  transform: rotate(90deg);
 }
 .mnL {
   grid-column: 1;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  padding: clamp(18px, 4vh, 44px) 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(20px, 3vw, 44px);
+  align-content: center;
+  padding: 18px 0 8px;
 }
 .mnL a {
   display: flex;
   align-items: baseline;
-  gap: clamp(14px, 2vw, 26px);
-  padding: clamp(8px, 1.4vh, 14px) 0;
+  gap: 14px;
+  padding: 16px 0;
   color: #f3ede4;
   text-decoration: none;
   border-bottom: 1px solid rgba(243, 237, 228, 0.1);
   opacity: 0;
-  transform: perspective(700px) rotateX(-75deg) translateY(26px);
+  transform: perspective(600px) rotateX(-60deg) translateY(-12px);
   transform-origin: 50% 0;
   transition:
-    opacity 0.6s ease,
-    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
-    color 0.3s ease;
-  transition-delay: 0s;
+    opacity 0.55s ease,
+    transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .mnO.on .mnL a {
   opacity: 1;
   transform: none;
-  transition-delay: var(--d), var(--d), 0s;
+  transition-delay: var(--d);
 }
 .mnL em {
   font-style: normal;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: #c98b95;
-  min-width: 26px;
+  min-width: 22px;
 }
 .mnL span {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 .mnL b {
   font-weight: 400;
-  font-size: clamp(30px, 4.4vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  font-size: clamp(22px, 2.3vw, 32px);
+  line-height: 1.08;
   transition:
     transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
     color 0.3s ease;
 }
 .mnL small {
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: rgba(243, 237, 228, 0.55);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: rgba(243, 237, 228, 0.5);
 }
 .mnL a:hover b,
 .mnL a:focus-visible b {
-  transform: translateX(12px);
-  color: #fff;
+  transform: translateX(10px);
   font-style: italic;
+  color: #fff;
 }
 .mnL a[aria-current] b {
   color: #c98b95;
@@ -3064,26 +3111,22 @@ html.mnOuvert {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  padding-top: 16px;
   opacity: 0;
-  transform: translateY(14px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease 0.5s;
 }
 .mnO.on .mnS {
   opacity: 1;
-  transform: none;
-  transition-delay: var(--d);
 }
 .mnS a {
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #f3ede4;
   text-decoration: none;
   border: 1px solid rgba(243, 237, 228, 0.25);
   border-radius: 999px;
-  padding: 10px 16px;
+  padding: 9px 15px;
   transition:
     background 0.3s ease,
     border-color 0.3s ease;
@@ -3098,34 +3141,52 @@ html.mnOuvert {
   grid-row: 2/4;
   align-self: center;
   justify-self: center;
-  perspective: 950px;
+  perspective: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 78px;
+  gap: 64px;
+  padding: 34px 0 10px;
   opacity: 0;
-  transform: scale(0.8);
+  transform: translateY(-20px) scale(0.9);
   transition:
-    opacity 0.9s ease 0.25s,
-    transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s;
+    opacity 0.9s ease 0.3s,
+    transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s;
 }
 .mnO.on .mnScene {
   opacity: 1;
   transform: none;
 }
 .mnCube {
-  --s: min(30vw, 300px);
+  --s: min(22vw, 250px);
+  --fil: rgba(243, 237, 228, 0.55);
+  --fin: rgba(243, 237, 228, 0.28);
+  --lum: #f3ede4;
   width: var(--s);
   height: var(--s);
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(-18deg) rotateY(-32deg);
+  transform: rotateX(-20deg) rotateY(-34deg);
 }
 .mnF {
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(243, 237, 228, 0.5);
-  background: rgba(94, 21, 34, 0.07);
+  border: 1px solid var(--fil);
+  background: rgba(94, 21, 34, 0.08);
+  transition:
+    border-color 0.5s ease,
+    background 0.5s ease;
+}
+.mnF span,
+.mnF i,
+.mnLustre i {
+  position: absolute;
+  display: block;
+  transition:
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    background 0.5s ease,
+    opacity 0.5s ease;
 }
 .mnF-fond {
   transform: translateZ(calc(var(--s) / -2));
@@ -3135,66 +3196,302 @@ html.mnOuvert {
 }
 .mnF-d {
   transform: rotateY(90deg) translateZ(calc(var(--s) / 2));
-  border-style: dashed;
   background: transparent;
+  border-color: var(--fin);
 }
 .mnF-sol {
   transform: rotateX(90deg) translateZ(calc(var(--s) / -2));
   background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(243, 237, 228, 0.16) 0 1px,
-      transparent 1px 12.5%
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(243, 237, 228, 0.16) 0 1px,
-      transparent 1px 12.5%
-    ),
-    rgba(94, 21, 34, 0.18);
+    repeating-linear-gradient(45deg, var(--fin) 0 1px, transparent 1px 9%),
+    repeating-linear-gradient(-45deg, var(--fin) 0 1px, transparent 1px 9%),
+    rgba(94, 21, 34, 0.22);
 }
 .mnF-haut {
   transform: rotateX(90deg) translateZ(calc(var(--s) / 2));
-  border-style: dashed;
   background: transparent;
-  border-color: rgba(243, 237, 228, 0.25);
+  border-color: var(--fin);
+  border-style: dashed;
+}
+.mnPan {
+  border: 1px solid var(--fin);
+  top: 14%;
+  height: 56%;
+  width: 22%;
+}
+.mnPan::after {
+  content: "";
+  position: absolute;
+  inset: 7%;
+  border: 1px solid var(--fin);
+}
+.mnPan.a {
+  left: 7%;
+}
+.mnPan.b {
+  right: 7%;
+}
+.mnPan.c {
+  left: 12%;
+  right: 12%;
+  width: auto;
+  top: auto;
+  bottom: 6%;
+  height: 20%;
+}
+.mnMiroir {
+  left: 36%;
+  width: 28%;
+  top: 9%;
+  height: 34%;
+  border: 1px solid var(--fil);
+  border-radius: 48% 48% 2px 2px / 30% 30% 2px 2px;
+  background: linear-gradient(
+    160deg,
+    rgba(243, 237, 228, 0.16),
+    transparent 60%
+  );
+}
+.mnChem {
+  left: 30%;
+  width: 40%;
+  bottom: 0;
+  height: 30%;
+  border: 1px solid var(--fil);
+  border-bottom: 0;
+  background: rgba(243, 237, 228, 0.05);
+}
+.mnChem::before {
+  content: "";
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  top: -6px;
+  height: 5px;
+  border: 1px solid var(--fil);
+  background: #1c1613;
+}
+.mnChem i {
+  left: 22%;
+  right: 22%;
+  bottom: 0;
+  height: 56%;
+  border: 1px solid var(--fin);
+  border-bottom: 0;
+  border-radius: 40% 40% 0 0 / 30% 30% 0 0;
+  background: radial-gradient(
+    60% 60% at 50% 100%,
+    rgba(94, 21, 34, 0.9),
+    transparent
+  );
 }
 .mnFen {
-  position: absolute;
-  top: 18%;
-  left: 14%;
-  width: 28%;
-  height: 46%;
-  border: 1px solid rgba(243, 237, 228, 0.65);
-  background: linear-gradient(180deg, rgba(243, 237, 228, 0.14), transparent);
+  left: 26%;
+  width: 48%;
+  top: 10%;
+  height: 62%;
+  border: 1px solid var(--fil);
+  background: linear-gradient(
+    180deg,
+    rgba(243, 237, 228, 0.22),
+    rgba(243, 237, 228, 0.04)
+  );
+}
+.mnFen i {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--fil);
 }
 .mnFen::after {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  border-left: 1px solid rgba(243, 237, 228, 0.5);
-}
-.mnFen.b {
-  left: auto;
-  right: 14%;
+  left: 0;
+  right: 0;
+  top: 38%;
+  border-top: 1px solid var(--fil);
 }
 .mnPorte {
-  position: absolute;
-  bottom: 0;
   left: 30%;
-  width: 32%;
-  height: 64%;
-  border: 1px solid rgba(201, 139, 149, 0.9);
+  width: 40%;
+  bottom: 0;
+  height: 72%;
+  border: 1px solid var(--fil);
   border-bottom: 0;
-  border-radius: 40% 40% 0 0 / 22% 22% 0 0;
+  border-radius: 50% 50% 0 0 / 22% 22% 0 0;
+}
+.mnPorte i {
+  width: 30%;
+  height: 36%;
+  border: 1px solid var(--fin);
+  top: 26%;
+}
+.mnPorte i:first-child {
+  left: 14%;
+}
+.mnPorte i:last-child {
+  right: 14%;
 }
 .mnTapis {
+  inset: 24% 20%;
+  border: 1px solid rgba(201, 139, 149, 0.85);
+  background: rgba(94, 21, 34, 0.45);
+}
+.mnTapis::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border: 1px dashed rgba(243, 237, 228, 0.35);
+}
+.mnRayon {
+  left: 0;
+  top: 18%;
+  width: 52%;
+  height: 44%;
+  background: linear-gradient(90deg, rgba(243, 237, 228, 0.22), transparent);
+  opacity: 0.25;
+}
+.mnCorn {
+  inset: 5%;
+  border: 1px solid var(--fin);
+}
+.mnRos {
+  left: 41%;
+  top: 41%;
+  width: 18%;
+  height: 18%;
+  border: 1px solid var(--fil);
+  border-radius: 50%;
+}
+.mnRos::after {
+  content: "";
   position: absolute;
   inset: 26%;
-  border: 1px solid rgba(201, 139, 149, 0.85);
-  background: rgba(94, 21, 34, 0.35);
+  border: 1px solid var(--fin);
+  border-radius: 50%;
+}
+.mnLustre {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+.mnLustre .t {
+  left: 0;
+  top: 0;
+  width: 0;
+  height: calc(var(--s) * 0.3);
+  border-left: 1px solid var(--fil);
+}
+.mnLustre .r {
+  left: calc(var(--s) * -0.11);
+  top: calc(var(--s) * 0.3 - var(--s) * 0.11);
+  width: calc(var(--s) * 0.22);
+  height: calc(var(--s) * 0.22);
+  border: 1px solid var(--fil);
+  border-radius: 50%;
+  transform: rotateX(90deg);
+}
+.mnLustre .r.b {
+  left: calc(var(--s) * -0.06);
+  top: calc(var(--s) * 0.34 - var(--s) * 0.06);
+  width: calc(var(--s) * 0.12);
+  height: calc(var(--s) * 0.12);
+}
+.mnCote {
+  position: absolute;
+  color: rgba(243, 237, 228, 0.55);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  opacity: 0.35;
+  transition: opacity 0.5s ease;
+}
+.mnCote em {
+  font-style: italic;
+  background: #1c1613;
+  padding: 0 6px;
+}
+.mnCote.l {
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  border-top: 1px dashed var(--fin);
+  text-align: center;
+}
+.mnCote.l em {
+  position: relative;
+  top: -8px;
+}
+.mnCote.h {
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  border-left: 1px dashed var(--fin);
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mnCote.h em {
+  position: relative;
+  left: -8px;
+}
+.mnCube[data-f="0"] .mnPan,
+.mnCube[data-f="0"] .mnPan::after,
+.mnCube[data-f="0"] .mnCorn {
+  border-color: var(--lum);
+  box-shadow: 0 0 14px rgba(243, 237, 228, 0.35);
+}
+.mnCube[data-f="1"] .mnF-sol {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(243, 237, 228, 0.6) 0 1px,
+      transparent 1px 9%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(243, 237, 228, 0.6) 0 1px,
+      transparent 1px 9%
+    ),
+    rgba(94, 21, 34, 0.35);
+}
+.mnCube[data-f="2"] .mnFen {
+  border-color: var(--lum);
+  background: linear-gradient(
+    180deg,
+    rgba(243, 237, 228, 0.55),
+    rgba(243, 237, 228, 0.12)
+  );
+  box-shadow: 0 0 30px rgba(243, 237, 228, 0.4);
+}
+.mnCube[data-f="2"] .mnRayon {
+  opacity: 1;
+}
+.mnCube[data-f="3"] .mnF {
+  border-color: var(--lum);
+}
+.mnCube[data-f="3"] .mnCote {
+  opacity: 1;
+}
+.mnCube[data-f="4"] .mnChem,
+.mnCube[data-f="4"] .mnChem::before {
+  border-color: var(--lum);
+  box-shadow: 0 0 18px rgba(243, 237, 228, 0.35);
+}
+.mnCube[data-f="4"] .mnChem i {
+  background: radial-gradient(
+    60% 70% at 50% 100%,
+    rgba(201, 139, 149, 1),
+    rgba(94, 21, 34, 0.6) 60%,
+    transparent
+  );
+}
+.mnCube[data-f="5"] .mnLustre i,
+.mnCube[data-f="5"] .mnRos {
+  border-color: var(--lum);
+  box-shadow: 0 0 16px rgba(243, 237, 228, 0.6);
 }
 .mnLeg {
   margin: 0;
@@ -3202,54 +3499,74 @@ html.mnOuvert {
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  text-align: center;
 }
 .mnLeg span {
-  font-size: 11px;
-  letter-spacing: 0.22em;
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: #c98b95;
 }
 .mnLeg b {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 19px;
   font-style: italic;
 }
 @media (max-width: 860px) {
+  .mnO {
+    border-radius: 0 0 24px 24px;
+  }
   .mnIn {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto;
     width: calc(100% - 32px);
+    padding: 12px 0 20px;
+  }
+  .mnK {
+    display: none;
   }
   .mnL {
-    padding: 14px 0 18px;
+    grid-template-columns: 1fr;
+    padding: 8px 0;
+  }
+  .mnL a {
+    padding: 12px 0;
+  }
+  .mnL b {
+    font-size: 24px;
   }
   .mnScene {
     grid-column: 1;
     grid-row: auto;
     flex-direction: row;
-    gap: 40px;
-    margin: 30px 0 20px;
-    padding-left: 56px;
     justify-self: start;
+    gap: 40px;
+    padding: 26px 0 18px 30px;
   }
   .mnCube {
-    --s: 110px;
+    --s: 96px;
+  }
+  .mnCote {
+    display: none;
   }
   .mnLeg {
     align-items: flex-start;
+    text-align: left;
   }
   .mnLeg b {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .mnO,
+  .mnV,
   .mnL a,
   .mnS,
   .mnScene {
     transition: none !important;
   }
-  .mnL a {
+  .mnL a,
+  .mnO.on {
     transform: none;
   }
 }
@@ -9014,15 +9331,40 @@ renderProj(); route();
 })();
 </script>
 <script>
-/* menu principal · trois barres et volet 3D (25/11, commentaire : « 3 mini barres sur le côté… un clin d'œil à la 3D ») */
+/* menu principal · trois barres, volet du haut et salon en 3D (25/11, « que ça prenne le haut de page… qu'on se sente dans le monde de la 3D et de l'exception ») */
 (function () {
   const ITEMS = [
-    ["accueil", "La maison", "Notre approche"],
-    ["artisans", "Nos artisans", "Des mains choisies une à une"],
-    ["vendre", "Vendre un bien", "Rénover avant la vente"],
-    ["modelisation", "La 3D", "Modélisation et visite virtuelle"],
-    ["collaborer", "Prescripteurs", "Architectes, agences, hôtels"],
-    ["club", "Club entreprises", "Admission sur sélection"],
+    ["accueil", "La maison", "Notre approche", "Moulures et boiseries"],
+    [
+      "artisans",
+      "Nos artisans",
+      "Des mains choisies une à une",
+      "Parquet point de Hongrie",
+    ],
+    [
+      "vendre",
+      "Vendre un bien",
+      "Rénover avant la vente",
+      "La lumière du jour",
+    ],
+    [
+      "modelisation",
+      "La 3D",
+      "Modélisation et visite virtuelle",
+      "Maquette au centimètre",
+    ],
+    [
+      "collaborer",
+      "Prescripteurs",
+      "Architectes, agences, hôtels",
+      "La cheminée de marbre",
+    ],
+    [
+      "club",
+      "Club entreprises",
+      "Admission sur sélection",
+      "Le lustre, la finition",
+    ],
   ];
   const SEC = [
     ["journal", "Le journal"],
@@ -9041,6 +9383,9 @@ renderProj(); route();
   b.setAttribute("aria-controls", "mnO");
   b.innerHTML = "<i></i><i></i><i></i>";
   hdr.appendChild(b);
+  const voile = document.createElement("div");
+  voile.className = "mnV";
+  voile.hidden = true;
   const o = document.createElement("div");
   o.id = "mnO";
   o.className = "mnO";
@@ -9048,25 +9393,17 @@ renderProj(); route();
   o.setAttribute("aria-modal", "true");
   o.setAttribute("aria-label", "Menu");
   o.hidden = true;
-  const faces = ["sol", "fond", "g", "d", "haut"]
-    .map(
-      (f) =>
-        '<div class="mnF mnF-' +
-        f +
-        '">' +
-        (f === "fond"
-          ? '<span class="mnFen"></span><span class="mnFen b"></span>'
-          : f === "g"
-            ? '<span class="mnPorte"></span>'
-            : f === "sol"
-              ? '<span class="mnTapis"></span>'
-              : "") +
-        "</div>",
-    )
-    .join("");
+  const piece =
+    '<div class="mnF mnF-fond"><span class="mnPan a"></span><span class="mnPan b"></span><span class="mnMiroir"></span><span class="mnChem"><i></i></span></div>' +
+    '<div class="mnF mnF-g"><span class="mnFen"><i></i></span><span class="mnPan c"></span><span class="mnCote h"><em>4,20 m</em></span></div>' +
+    '<div class="mnF mnF-d"><span class="mnPorte"><i></i><i></i></span></div>' +
+    '<div class="mnF mnF-sol"><span class="mnTapis"></span><span class="mnRayon"></span><span class="mnCote l"><em>6,80 m</em></span></div>' +
+    '<div class="mnF mnF-haut"><span class="mnCorn"></span><span class="mnRos"></span></div>' +
+    '<div class="mnLustre"><i class="t"></i><i class="r"></i><i class="r b"></i></div>' +
+    '';
   o.innerHTML =
     '<div class="mnIn">' +
-    '<div class="mnTop"><span class="mnMarque">Maison <i>Ouvrage</i></span><button type="button" class="mnX" aria-label="Fermer le menu"><i></i><i></i></button></div>' +
+    '<div class="mnTop"><span class="mnMarque">Maison <i>Ouvrage</i></span><span class="mnK">Le menu · projet type en 3D</span><button type="button" class="mnX" aria-label="Fermer le menu"><i></i><i></i></button></div>' +
     '<nav class="mnL" aria-label="Menu principal">' +
     ITEMS.map(
       (it, i) =>
@@ -9077,7 +9414,7 @@ renderProj(); route();
         '" data-i="' +
         i +
         '" style="--d:' +
-        (0.08 + i * 0.06) +
+        (0.16 + i * 0.055) +
         's"><em>0' +
         (i + 1) +
         "</em><span><b>" +
@@ -9087,30 +9424,30 @@ renderProj(); route();
         "</small></span></a>",
     ).join("") +
     "</nav>" +
-    '<div class="mnS" style="--d:.5s">' +
+    '<div class="mnScene" aria-hidden="true"><div class="mnCube" id="mnCube" data-f="0">' +
+    piece +
+    '</div><p class="mnLeg"><span>Finition</span><b id="mnLegT">' +
+    ITEMS[0][3] +
+    "</b></p></div>" +
+    '<div class="mnS">' +
     SEC.map(
       (s) => '<a href="#' + s[0] + '" data-mr="' + s[0] + '">' + s[1] + "</a>",
     ).join("") +
     "</div>" +
-    '<div class="mnScene" aria-hidden="true"><div class="mnCube" id="mnCube">' +
-    faces +
-    '</div><p class="mnLeg"><span>Projet type</span><b id="mnLegT">La maison</b></p></div>' +
     "</div>";
+  document.body.appendChild(voile);
   document.body.appendChild(o);
   const cube = o.querySelector("#mnCube"),
     legT = o.querySelector("#mnLegT");
   let ouvert = false,
-    ry = -32,
-    rx = -18,
-    cible = -32;
-  const pose = () => {
-    cube.style.transform = "rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
-  };
-  let raf = 0;
+    ry = -34,
+    rx = -20,
+    cible = -34,
+    raf = 0;
   const anime = () => {
-    cible += 0.05;
-    ry += (cible - ry) * 0.08;
-    pose();
+    cible += 0.045;
+    ry += (cible - ry) * 0.07;
+    cube.style.transform = "rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
     if (ouvert) raf = requestAnimationFrame(anime);
   };
   const marquer = () => {
@@ -9123,37 +9460,41 @@ renderProj(); route();
     if (ouvert) return;
     ouvert = true;
     marquer();
-    const r = b.getBoundingClientRect();
-    o.style.setProperty("--cx", r.left + r.width / 2 + "px");
-    o.style.setProperty("--cy", r.top + r.height / 2 + "px");
     o.hidden = false;
+    voile.hidden = false;
     document.documentElement.classList.add("mnOuvert");
     b.setAttribute("aria-expanded", "true");
-    b.setAttribute("aria-label", "Fermer le menu");
     requestAnimationFrame(() =>
-      requestAnimationFrame(() => o.classList.add("on")),
+      requestAnimationFrame(() => {
+        o.classList.add("on");
+        voile.classList.add("on");
+      }),
     );
     raf = requestAnimationFrame(anime);
     setTimeout(() => {
       const f = o.querySelector(".mnL a");
       if (f) f.focus({ preventScroll: true });
-    }, 350);
+    }, 450);
   }
   function fermer() {
     if (!ouvert) return;
     ouvert = false;
     cancelAnimationFrame(raf);
     o.classList.remove("on");
+    voile.classList.remove("on");
     document.documentElement.classList.remove("mnOuvert");
     b.setAttribute("aria-expanded", "false");
-    b.setAttribute("aria-label", "Ouvrir le menu");
     setTimeout(() => {
-      if (!ouvert) o.hidden = true;
-    }, 650);
+      if (!ouvert) {
+        o.hidden = true;
+        voile.hidden = true;
+      }
+    }, 700);
     b.focus({ preventScroll: true });
   }
   b.addEventListener("click", () => (ouvert ? fermer() : ouvrir()));
   o.querySelector(".mnX").addEventListener("click", fermer);
+  voile.addEventListener("click", fermer);
   o.addEventListener("click", (e) => {
     if (e.target.closest('a[href^="#"]')) setTimeout(fermer, 60);
   });
@@ -9162,15 +9503,17 @@ renderProj(); route();
   });
   o.querySelectorAll(".mnL a").forEach((a) => {
     const viser = () => {
-      cible = -32 + Number(a.dataset.i) * 60;
-      legT.textContent = a.querySelector("b").textContent;
+      const i = Number(a.dataset.i);
+      cible = -34 + i * 60;
+      cube.dataset.f = i;
+      legT.textContent = ITEMS[i][3];
     };
     a.addEventListener("mouseenter", viser);
     a.addEventListener("focus", viser);
   });
   o.addEventListener("pointermove", (e) => {
-    if (e.pointerType !== "mouse") return;
-    rx = -18 + (e.clientY / innerHeight - 0.5) * -16;
+    if (e.pointerType === "mouse")
+      rx = -20 + (e.clientY / innerHeight - 0.3) * -14;
   });
   addEventListener("hashchange", marquer);
 })();
