@@ -2832,7 +2832,11 @@ body.iaOn .iaFab{display:none}
 .clEx b{font-weight:400;font-size:18px;line-height:1.35}.clEx small{font-size:13px;color:rgba(255,253,250,.75)}.clEx i{font-size:12.5px;color:#E9D9C9}
 .clHP{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.clHP li{border:1px solid rgba(255,253,250,.25);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}.clHP li.on{background:var(--blanc);color:var(--bdx);border-color:var(--blanc)}.clHP span{font-size:12px;opacity:.8}.clHP b{font-weight:400;font-size:22px}
 .clHome .clHN{font-size:12.5px;margin:0;opacity:.8}
-.navClub{color:var(--bdx)!important}.clHome .h-l{color:var(--blanc)}.clHL p{margin:14px 0 0}.clHL .btns{margin-top:22px}.clA .apB.plein{background:var(--bdx);color:var(--blanc);border-color:var(--bdx)}
+.navClub{color:var(--bdx)!important}
+/* menu principal · présentation resserrée (25/11) */
+@media (min-width:1281px){.nav{flex:1 1 auto;justify-content:center;gap:0}.nav a{font-size:10.5px;letter-spacing:.17em;padding:10px 17px}.nav a::after{left:17px;right:17px}.nav a+a::before{content:"";position:absolute;left:-2px;top:50%;width:4px;height:4px;border:1px solid var(--bdx);transform:translateY(-50%) rotate(45deg);opacity:.4}.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:8px 18px;margin-left:14px;transition:background .35s ease,color .35s ease}.nav a.navClub::before,.nav a.navClub::after{display:none}.nav a.navClub:hover,.nav a.navClub[aria-current="page"]{background:var(--bdx);color:var(--blanc)!important}}
+@media (max-width:1280px){.nav a.navClub{border:1px solid var(--bdx);border-radius:999px;padding:6px 13px;margin:6px 0}.nav a.navClub::after{display:none}}
+.clHome .h-l{color:var(--blanc)}.clHL p{margin:14px 0 0}.clHL .btns{margin-top:22px}.clA .apB.plein{background:var(--bdx);color:var(--blanc);border-color:var(--bdx)}
 
 .clAn{margin-top:14px;font-size:14px;color:var(--bdx)}
 .clExW{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,4vw,60px);align-items:center}.clExW p{line-height:1.6;color:#4A413B}
