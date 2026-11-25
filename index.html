@@ -4144,16 +4144,25 @@ body.iaOn .iaFab{display:none}
       var h = (location.hash || "").replace("#", "");
       var at = d.querySelector(".moAt"), es = d.querySelector(".moEs");
       at.hidden = !adm || h.indexOf("admin") === 0;
+      d.hidden = h.indexOf("espace") === 0 && innerWidth > 900;
       es.hidden = h.indexOf("espace") === 0 || (adm && h.indexOf("admin") !== 0 && false);
     };
     S.admin().then(function (a) { adm = !!a; maj(); });
     maj();
     addEventListener("hashchange", maj);
+    addEventListener("resize", maj);
   }
-  S.ready.then(function () { if (S.reel()) pastille(); });
+  S.ready.then(function () { if (S.reel()) { pastille(); sortieEspace(); } });
+  function sortieEspace() {
+    var esp = document.getElementById("esp"); if (!esp || !window.MutationObserver) return;
+    var poser = function () {
+      var bas = esp.querySelector(".rBas"); if (bas && !bas.querySelector(".moQuit")) { var q = document.createElement("button"); q.type = "button"; q.className = "moQuit"; q.textContent = "Se déconnecter"; q.onclick = S.quitter; bas.appendChild(q); }
+    };
+    poser(); new MutationObserver(poser).observe(esp, { childList: true, subtree: true });
+  }
   var st = document.createElement("style");
   st.textContent =
-    ".moLog{margin-top:22px;max-width:420px}.moLog .fld{display:flex;flex-direction:column;gap:6px}.moLog input{font:inherit;padding:12px 14px;border:1px solid var(--fil,#d9cfc3);border-radius:10px;background:#fff}.moLog .fld+.fld{margin-top:12px}.moOu{margin:16px 0 0;font-size:13px;color:#6b5f57}.moLien{font:inherit;font-size:13px;background:none;border:0;padding:0;color:#5E1522;text-decoration:underline;cursor:pointer}.moOut{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:10px;align-items:center;background:#FBF8F3;border:1px solid #d9cfc3;border-radius:999px;padding:6px 8px 6px 14px;font-size:13px;color:#1C1613;box-shadow:0 6px 20px rgba(28,22,19,.08)}.moOut a{font-size:12px;color:#FBF8F3;background:#5E1522;border-radius:999px;padding:5px 12px;text-decoration:none}.moOut a[hidden]{display:none}.moOut button{font:inherit;font-size:12px;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px;padding:5px 10px;cursor:pointer}.moOut[hidden]{display:none}@media(max-width:600px){.moOut span{display:none}}";
+    ".moLog{margin-top:22px;max-width:420px}.moLog .fld{display:flex;flex-direction:column;gap:6px}.moLog input{font:inherit;padding:12px 14px;border:1px solid var(--fil,#d9cfc3);border-radius:10px;background:#fff}.moLog .fld+.fld{margin-top:12px}.moOu{margin:16px 0 0;font-size:13px;color:#6b5f57}.moLien{font:inherit;font-size:13px;background:none;border:0;padding:0;color:#5E1522;text-decoration:underline;cursor:pointer}.moOut{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:10px;align-items:center;background:#FBF8F3;border:1px solid #d9cfc3;border-radius:999px;padding:6px 8px 6px 14px;font-size:13px;color:#1C1613;box-shadow:0 6px 20px rgba(28,22,19,.08)}.moOut a{font-size:12px;color:#FBF8F3;background:#5E1522;border-radius:999px;padding:5px 12px;text-decoration:none}.moOut a[hidden]{display:none}.moOut button{font:inherit;font-size:12px;border:1px solid #5E1522;color:#5E1522;background:none;border-radius:999px;padding:5px 10px;cursor:pointer}.moOut[hidden]{display:none}.moQuit{font:inherit;font-size:13px;background:none;border:0;padding:0;margin-top:4px;color:inherit;opacity:.8;text-decoration:underline;cursor:pointer}@media(max-width:600px){.moOut span{display:none}}";
   document.head.appendChild(st);
 })();
 
@@ -7829,6 +7838,41 @@ document.addEventListener('input', (e) => { if (e.target && e.target.id === 'pxm
     const b = ESP.A.pxB, f = (key, n, l, rows) => '<label><span><em>' + n + '</em>' + l + '</span><textarea data-pxbl="' + key + '"' + (rows ? ' rows="' + rows + '"' : '') + '>' + esc(b[key] || '') + '</textarea></label>';
     const bloc = '<div class="pxSt"><b>Le message en sept temps · personnalisé pour cette piste</b>' + f('acc', '1', 'Ce que nous avons relevé') + f('qui', '2', 'Qui nous sommes', 4) + f('offre', '3', 'Ce que nous proposons') + f('etapes', '4', 'Concrètement · une étape par ligne', 5) + f('atouts', '5', 'Ce qui nous distingue · un point par ligne', 5) + f('modal', '6', 'En toute transparence · rémunération') + f('appel', '7', 'La proposition concrète') + '</div>';
     h = h.replace(/<div class="pxSt">[\s\S]*?<\/div><label>Aperçu/, bloc + '<label>Aperçu'); return h.replace(/(<textarea id="pxm-b">)[^<]*/, '$1' + esc(pxAssemble(b))); }; }
+/* ================================================================ ESPACES DIFFÉRENCIÉS (25/11) · client : sa maison · partenaire : son activité */
+{ const st = document.createElement('style'); st.textContent = `
+#esp.espU .rGrp{display:block;padding:16px 14px 6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+#esp.espU .rNav .rGrp:first-child{padding-top:2px}
+.pipT{width:100%;border-collapse:collapse}
+.pipT th{text-align:left;font-weight:400;padding:8px 6px;border-bottom:1px solid var(--fil2,#ddd)}
+.pipT td{padding:10px 6px;border-bottom:1px solid var(--fil2,#eee);vertical-align:top}.pipT td small{display:block;opacity:.7}
+.pipT .n{text-align:right;white-space:nowrap}
+@media (max-width:900px){#esp.espU .espTB{position:relative!important}#esp.espU .rGrp{display:none}.pipT th:nth-child(2),.pipT td:nth-child(2){display:none}}
+`; (document.body || document.head).appendChild(st); }
+{ const p1 = espPanneau; espPanneau = function (tab, C) {
+  let h = p1(tab, C); if (tab !== 'apercu') return h;
+  const { M, pro, S, ET, et } = C;
+  if (!pro) return h;
+  const Pr = S.presentations || [], Mk = (ESP.marches && ESP.marches.liste) || [], conv = convOf(S);
+  const rows = Pr.slice().sort((a, b) => String(b.le || '').localeCompare(String(a.le || ''))).slice(0, 6).map((p) => { const m = Mk.find((x) => x.pid === p.id), mt = m ? (+m.montant || 0) : (+p.est || 0), cm = m ? commission(conv, mt).montant : 0;
+    return '<tr><td><b>' + esc(p.nature || 'Affaire') + '</b><small>' + esc((p.client || '') + (p.lieu ? ' · ' + p.lieu : '')) + '</small></td><td>' + esc(p.le ? jourC(p.le) : '') + '</td><td class="n">' + eur0(mt) + (m ? '' : '<small>estimé</small>') + '</td><td class="n">' + (m ? eur0(cm) : '·') + '</td><td>' + (m ? 'Marché signé' : 'Présentée') + '</td></tr>'; }).join('');
+  const pipe = '<section class="bgW"><div class="bgH"><b>Mes affaires</b><small>Présentées par Maison Ouvrage · commission selon votre convention</small></div>' +
+    (rows ? '<div class="regW"><table class="pipT"><thead><tr><th>Affaire</th><th>Présentée le</th><th class="n">Montant HT</th><th class="n">Commission</th><th>Statut</th></tr></thead><tbody>' + rows + '</tbody></table></div>' : '<p class="muted petit">Les affaires que nous vous présentons apparaîtront ici, avec leur montant et votre commission</p>') + '<button type="button" class="lnk2b" data-et="apports">Voir toutes mes affaires</button></section>';
+  const a = h.indexOf('<section class="bgW">'); let kpi = '';
+  if (a >= 0) { const b = h.indexOf('</section>', a) + 10; kpi = h.slice(a, b); h = h.slice(0, a) + h.slice(b); }
+  const i = h.indexOf('<div class="ov">'); h = i > 0 ? h.slice(0, i) + kpi + pipe + h.slice(i) : kpi + pipe + h;
+  return h;
+}; }
+{ const r1 = espRender; espRender = function () {
+  r1.apply(this, arguments);
+  try {
+    const app = document.querySelector('#esp .app'), nav = app && app.querySelector('.rNav'); if (!nav || nav.dataset.grp) return;
+    const pro = app.classList.contains('isPro'); nav.dataset.grp = '1';
+    const G = pro ? [['Pilotage', ['apercu', 'apports', 'club', 'simul']], ['Ma mission', ['mission']], ['Administratif', ['documents', 'conformite', 'coffre']], ['Échanges', ['messages', 'compte']]] : [['Mon projet', ['apercu', 'projet', 'documents', 'coffre']], ['Échanges', ['messages', 'compte']]];
+    const by = {}; nav.querySelectorAll('button[data-et]').forEach((b) => { by[b.dataset.et] = b; });
+    G.forEach(([t, ks]) => { const l = document.createElement('span'); l.className = 'rGrp'; l.setAttribute('aria-hidden', 'true'); l.textContent = t; nav.appendChild(l); ks.forEach((k) => { if (by[k]) { nav.appendChild(by[k]); delete by[k]; } }); });
+    Object.keys(by).forEach((k) => nav.appendChild(by[k]));
+  } catch (e) { /* rien */ }
+}; }
 /* ================================================================ ASSISTANT */
 (function () {
   const MAIL = 'maisonouvrage@gmail.com';
