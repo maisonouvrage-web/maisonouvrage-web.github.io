@@ -11,6 +11,12 @@
   )
     return;
   var hadToken = /access_token=|error_description=/.test(location.hash);
+  var recup = /type=recovery/.test(location.hash);
+  var erreurRetour = "";
+  try {
+    var mErr = /error_description=([^&]+)/.exec(location.hash);
+    if (mErr) erreurRetour = decodeURIComponent(mErr[1].replace(/\+/g, " "));
+  } catch (e) {}
   var sb = window.supabase.createClient(CFG.url, CFG.key, {
     auth: {
       persistSession: true,
@@ -324,6 +330,38 @@
     });
     return r.error ? r.error.message : "";
   }
+  /* fournisseurs de connexion activés (Google, Apple, Microsoft…), lus sur le serveur */
+  var fournP = null;
+  function fournisseurs() {
+    if (!fournP)
+      fournP = fetch(CFG.url + "/auth/v1/settings", {
+        headers: { apikey: CFG.key },
+      })
+        .then(function (r) {
+          return r.ok ? r.json() : {};
+        })
+        .then(function (j) {
+          return (j && j.external) || {};
+        })
+        .catch(function () {
+          return {};
+        });
+    return fournP;
+  }
+  async function viaFournisseur(p) {
+    var r = await sb.auth.signInWithOAuth({
+      provider: p,
+      options: { redirectTo: location.origin + location.pathname },
+    });
+    return r.error ? r.error.message : "";
+  }
+  /* mot de passe oublié : lien de réinitialisation par e-mail */
+  async function oublie(mail) {
+    var r = await sb.auth.resetPasswordForEmail(mail, {
+      redirectTo: location.origin + location.pathname,
+    });
+    return r.error ? r.error.message : "";
+  }
   async function quitter() {
     try {
       await sb.auth.signOut();
@@ -343,6 +381,15 @@
     reel: reel,
     lien: lien,
     quitter: quitter,
+    fournisseurs: fournisseurs,
+    viaFournisseur: viaFournisseur,
+    oublie: oublie,
+    recup: function () {
+      return recup;
+    },
+    erreurRetour: function () {
+      return erreurRetour;
+    },
     email: function () {
       return sess && sess.user ? sess.user.email || "" : "";
     },
