@@ -19,6 +19,7 @@
 - [Appartement haussmannien](https://maisonouvrage-web.github.io/renovation-appartement-haussmannien/)
 - [Rénover avant de vendre](https://maisonouvrage-web.github.io/renovation-avant-vente/)
 - [Apporteur d'affaires BTP](https://maisonouvrage-web.github.io/apporteur-affaires-btp/)
+- [Rénovation en copropriété](https://maisonouvrage-web.github.io/renovation-copropriete-paris/)
 
 ## Contact
 
