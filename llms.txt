@@ -20,6 +20,9 @@
 - [Rénover avant de vendre](https://maisonouvrage-web.github.io/renovation-avant-vente/)
 - [Apporteur d'affaires BTP](https://maisonouvrage-web.github.io/apporteur-affaires-btp/)
 - [Rénovation en copropriété](https://maisonouvrage-web.github.io/renovation-copropriete-paris/)
+- [Entreprise de rénovation à Paris](https://maisonouvrage-web.github.io/entreprise-renovation-paris/)
+- [Marbrier à Paris](https://maisonouvrage-web.github.io/marbrier-paris/)
+- [Prix d'une rénovation à Paris](https://maisonouvrage-web.github.io/prix-renovation-appartement-paris/)
 
 ## Contact
 
